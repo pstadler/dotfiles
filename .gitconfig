@@ -7,7 +7,7 @@
     st = status
     co = checkout
     ci = commit
-	br = branch
+    br = branch
 
 [branch "master"]
     remote = origin
