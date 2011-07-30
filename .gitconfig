@@ -1,0 +1,10 @@
+[user]
+    name = Patrick Stadler
+    email = patrick.stadler@gmail.com
+[color]
+    diff = true
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
