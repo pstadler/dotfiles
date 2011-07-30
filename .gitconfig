@@ -2,9 +2,13 @@
     name = Patrick Stadler
     email = patrick.stadler@gmail.com
 [color]
-    diff = true
+    ui = true
 [alias]
     st = status
     co = checkout
     ci = commit
-    br = branch
+	br = branch
+
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
