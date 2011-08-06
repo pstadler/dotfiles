@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 zstyle ':completion:*' insert-tab false
 PROMPT='%{$fg_bold[green]%}%n%{$fg_bold[white]%}@%m%{$reset_color%} %{$fg_bold[blue]%}%2~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
+export LSCOLORS='ExFxCxDxbxegedabagacad'
 
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
