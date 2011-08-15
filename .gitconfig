@@ -8,6 +8,7 @@
     co = checkout
     ci = commit
     br = branch
+    graph = log --graph --oneline --all
 
 [branch "master"]
     remote = origin
