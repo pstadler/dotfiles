@@ -4,7 +4,7 @@ alias top='top -o cpu'
 alias less='less -I'
 alias grep='grep --color'
 
-export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/homebrew/Cellar/ruby/1.9.2-p180/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/homebrew/Cellar/ruby/1.9.2-p290/bin:/usr/local/bin:$PATH
 export MANPATH=/usr/local/homebrew/share/man:$MANPATH
 
 export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.6/libexec/yuicompressor-2.4.6.jar
