@@ -3,6 +3,7 @@ export EDITOR=vim
 alias top='top -o cpu'
 alias less='less -I'
 alias grep='grep --color'
+alias duplicate='open -a Terminal .'
 
 export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/homebrew/Cellar/ruby/1.9.2-p290/bin:/usr/local/bin:$PATH
 export MANPATH=/usr/local/homebrew/share/man:$MANPATH
