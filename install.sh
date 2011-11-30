@@ -2,5 +2,5 @@
 
 for symlink in bash_profile bashrc gitconfig vim vimrc zshrc
 do
-	ln -s $PWD.$symlink ~/.$symlink
+	ln -s $PWD/$symlink ~/.$symlink
 done

@@ -1,24 +1,24 @@
-[submodule ".vim/bundle/snipmate.vim"]
-	path = .vim/bundle/snipmate.vim
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule ".vim/bundle/ack.vim"]
-	path = .vim/bundle/ack.vim
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/checksyntax_vim"]
-	path = .vim/bundle/checksyntax_vim
+[submodule "vim/bundle/checksyntax_vim"]
+	path = vim/bundle/checksyntax_vim
 	url = git://github.com/tomtom/checksyntax_vim.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-nerdtree-tabs"]
-	path = .vim/bundle/vim-nerdtree-tabs
+[submodule "vim/bundle/vim-nerdtree-tabs"]
+	path = vim/bundle/vim-nerdtree-tabs
 	url = git://github.com/jistr/vim-nerdtree-tabs.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
