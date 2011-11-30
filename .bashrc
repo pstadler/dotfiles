@@ -5,7 +5,7 @@ alias less='less -I'
 alias grep='grep --color'
 alias duplicate='open -a Terminal .'
 
-export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/homebrew/Cellar/ruby/1.9.2-p290/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/homebrew/Cellar/ruby/1.9.3-p0/bin:/usr/local/bin:$PATH
 export MANPATH=/usr/local/homebrew/share/man:$MANPATH
 
 export NODE_PATH=/usr/local/homebrew/lib/node_modules
