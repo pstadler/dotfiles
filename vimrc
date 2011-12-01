@@ -22,7 +22,7 @@ set noswapfile
 
 " show ruler, line numbers
 set ruler
-set number
+" set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 "search
@@ -45,6 +45,13 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 endif
 
-" NERDTree tabs
-let g:nerdtree_tabs_synchronize_view = 1
-let g:nerdtree_tabs_autoclose = 1
+" status line
+set laststatus=2
+set title
+" set statusline+=%{fugitive#statusline()} " add current branch to statusline
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" mappings
+map <F5> :NERDTreeTabsToggle<CR>
+map <F6> <C-W>w
