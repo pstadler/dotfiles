@@ -52,6 +52,10 @@ set title
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
+
 " mappings
 map <F5> :NERDTreeTabsToggle<CR>
 map <F6> <C-W>w
+" toggle insert mode
+nnoremap <C-Y> i
+imap <C-Y> <Esc>
