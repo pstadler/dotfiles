@@ -59,3 +59,6 @@ map <F6> <C-W>w
 " toggle insert mode
 nnoremap <C-Y> i
 imap <C-Y> <Esc>
+
+" syntastic
+let g:syntastic_enable_signs=0
