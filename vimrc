@@ -24,13 +24,13 @@ set noswapfile
 
 " show ruler, line numbers
 set ruler
-" set number
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+"set number
+hi LineNr cterm=NONE ctermfg=DarkGrey ctermbg=Black
 
 "search
 set incsearch " find as you type
 set smartcase
-set hlsearch
+"set hlsearch
 
 " if a file has been changed outside of vim and it has not been changed,
 " automatically re-read it
@@ -50,10 +50,14 @@ endif
 " status line
 set laststatus=2
 set title
-" set statusline+=%{fugitive#statusline()} " add current branch to statusline
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+"set statusline+=%{fugitive#statusline()} " add current branch to statusline
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+hi StatusLine ctermfg=Grey ctermbg=Black
+hi StatusLineNC ctermfg=DarkGrey ctermbg=Black
+au InsertEnter * hi StatusLine ctermfg=Blue ctermbg=Black
+au InsertLeave * hi StatusLine ctermfg=Grey ctermbg=Black
 
 " syntastic
 let g:syntastic_enable_signs=0
