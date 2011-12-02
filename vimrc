@@ -1,3 +1,5 @@
+let mapleader = ','
+
 call pathogen#infect()
 
 syntax on
@@ -53,12 +55,15 @@ set title
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
-" mappings
-map <F5> :NERDTreeTabsToggle<CR>
-map <F6> <C-W>w
+" syntastic
+let g:syntastic_enable_signs=0
+
+" minibufexpl
+map <S-Tab> :MiniBufExplorer<CR>
+
 " toggle insert mode
 nnoremap <C-Y> i
 imap <C-Y> <Esc>
 
-" syntastic
-let g:syntastic_enable_signs=0
+" command-t
+map <C-X> :CommandT<CR>
