@@ -59,18 +59,40 @@ hi StatusLineNC ctermfg=DarkGrey ctermbg=Black
 au InsertEnter * hi StatusLine ctermfg=Blue ctermbg=Black
 au InsertLeave * hi StatusLine ctermfg=Grey ctermbg=Black
 
-" syntastic
+"
+" Syntastic
+"
 let g:syntastic_enable_signs=0
 
-" minibufexpl
-map <S-Tab> :MiniBufExplorer<CR>
+"
+" Tabs (MiniBufExplorer)
+"
+function! MiniBufExplorer()
+	if bufname("%") == '-MiniBufExplorer-'
+		exec "normal \<cr>"
+	else
+		MiniBufExplorer
+	endif
+endfunction
+" 167 = §
+nmap <Char-167> :call MiniBufExplorer()<CR>
+nmap <S-Tab> :bp<CR>
+nmap <Tab> :bn<CR>
 
-" toggle insert mode
+"
+" Toggle insert mode
+"
 nnoremap <C-Y> i
 imap <C-Y> <Esc>
 
-" command-t
-map <C-X> :CommandT<CR>
+" Command-T
+function! CommandT()
+	if bufname("%") == '-MiniBufExplorer-'
+		exec "normal! \<c-w>\<c-w>"
+	endif
+	CommandT
+endfunction
+map <C-X> :call CommandT()<CR>
 
 "
 " Invisibles
