@@ -71,3 +71,14 @@ imap <C-Y> <Esc>
 
 " command-t
 map <C-X> :CommandT<CR>
+
+" Invisibles
+hi NonText ctermfg=DarkGrey
+hi SpecialKey ctermfg=DarkGrey
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" Line Numbers
+nmap <leader>n :set number!<CR>
