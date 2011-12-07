@@ -27,6 +27,12 @@ set ruler
 "set number
 hi LineNr cterm=NONE ctermfg=DarkGrey ctermbg=Black
 
+" display command
+set showcmd
+
+" allow opening buffers in background even if current is unsaved
+set hidden
+
 "search
 set incsearch " find as you type
 set smartcase
