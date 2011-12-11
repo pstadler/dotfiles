@@ -1,7 +1,7 @@
 export EDITOR=vim
 
 alias top='top -o cpu'
-alias less='less -I'
+alias less='less -IX'
 alias grep='grep --color'
 alias duplicate='open -a Terminal .'
 
