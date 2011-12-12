@@ -91,11 +91,14 @@ nmap <Tab> :bn<CR>
 nnoremap <C-Y> i
 imap <C-Y> <Esc>
 
+"
 " Command-T
+"
 function! CommandT()
 	if bufname("%") == '-MiniBufExplorer-'
 		exec "normal! \<c-w>\<c-w>"
 	endif
+	CommandTFlush
 	CommandT
 endfunction
 map <C-X> :call CommandT()<CR>
