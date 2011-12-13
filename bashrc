@@ -1,6 +1,6 @@
 export EDITOR=vim
 
-export LESS='-IX' # case insenstive search / don't clear screen on exit
+export LESS='-IRX' # case insenstive search / raw color sequences / don't clear screen on exit
 alias top='top -o cpu'
 alias grep='grep --color'
 alias duplicate='open -a Terminal .'
