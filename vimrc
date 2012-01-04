@@ -33,6 +33,9 @@ set showcmd
 " allow opening buffers in background even if current is unsaved
 set hidden
 
+" disable folding
+set nofoldenable
+
 "search
 set incsearch " find as you type
 set smartcase
