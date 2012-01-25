@@ -1,2 +1,5 @@
 --type-set
 gsp=.gsp
+
+--type-set
+less=.less
