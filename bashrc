@@ -13,6 +13,13 @@ export NODE_PATH=/usr/local/homebrew/lib/node_modules
 export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.6/libexec/yuicompressor-2.4.6.jar
 export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
 
+# python
+export PATH=/usr/local/homebrew/share/python:$PATH
+export WORKON_HOME=$HOME/.virtualenvs
+if [ -f /usr/local/homebrew/share/python/virtualenvwrapper.sh ]; then
+	source /usr/local/homebrew/share/python/virtualenvwrapper.sh
+fi
+
 # grails
 export GRAILS_HOME=/usr/local/homebrew/Cellar/grails/2.0.0/libexec
 
