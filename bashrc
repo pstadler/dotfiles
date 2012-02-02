@@ -20,6 +20,9 @@ if [ -f /usr/local/homebrew/share/python/virtualenvwrapper.sh ]; then
 	source /usr/local/homebrew/share/python/virtualenvwrapper.sh
 fi
 
+# gettext
+export PATH=/usr/local/homebrew/Cellar/gettext/0.18.1.1/bin:$PATH
+
 # grails
 export GRAILS_HOME=/usr/local/homebrew/Cellar/grails/2.0.0/libexec
 

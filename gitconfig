@@ -8,7 +8,7 @@
     co = checkout
     ci = commit
     br = branch
-    graph = log --graph --oneline --all
+    l = log --graph --full-history --pretty=format:'%C(red)%h%C(reset) - %C(yellow)%C(yellow)%s %C(green)(%an, %cr)%C(reset)' --abbrev-commit --date=relative
 
 [branch "master"]
     remote = origin
