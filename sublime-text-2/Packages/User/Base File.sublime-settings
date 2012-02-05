@@ -1,3 +1,6 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme"
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"highlight_line": true,
+	"fold_buttons": false,
+	"default_line_ending": "unix"
 }

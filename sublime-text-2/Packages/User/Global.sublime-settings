@@ -1,5 +1,8 @@
 // Place user-specific overrides in this file, to ensure they're preserved
 // when upgrading
 {
-	"theme": "Soda Light.sublime-theme"
+	"theme": "Soda Light.sublime-theme",
+	"hot_exit": false,
+	"show_tab_close_buttons": false,
+	"highlight_modified_tabs": true
 }
