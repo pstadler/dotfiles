@@ -3,7 +3,7 @@
 # Install dotfiles
 for symlink in bash_profile bashrc gitconfig vim vimrc zshrc ackrc
 do
-	ln -s $PWD/$symlink ~
+	ln -s $PWD/$symlink ~/.$symlink
 done
 
 # Sublime Text 2 Config and symlink
