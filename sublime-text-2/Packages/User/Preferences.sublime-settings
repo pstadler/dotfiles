@@ -1,0 +1,19 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"default_line_ending": "unix",
+	"fold_buttons": false,
+	"font_size": 12.0,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_subsequent_lines": false,
+	"scroll_speed": 2.0,
+	"shift_tab_unindent": true,
+	"show_tab_close_buttons": false,
+	"theme": "Soda Light.sublime-theme",
+	"word_wrap": true
+}
