@@ -46,3 +46,5 @@ function share {
 if [ -f ~/.bashrc_local ]; then
 	source ~/.bashrc_local
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
