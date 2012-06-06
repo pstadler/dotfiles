@@ -21,7 +21,7 @@ CASE_SENSITIVE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew heroku rails3 django)
+plugins=(git brew heroku rails3 django zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,6 +30,7 @@ unsetopt correct_all
 zstyle ':completion:*' insert-tab false
 PROMPT='%{$fg_bold[green]%}%n%{$fg_bold[white]%}@%m%{$reset_color%} %{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
 export LSCOLORS='ExFxCxDxbxegedabagacad'
+ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
 
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
