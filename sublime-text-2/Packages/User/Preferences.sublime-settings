@@ -15,5 +15,6 @@
 	"shift_tab_unindent": true,
 	"show_tab_close_buttons": false,
 	//"theme": "Soda Light.sublime-theme",
-	"word_wrap": true
+	"word_wrap": true,
+	"show_full_path": true
 }

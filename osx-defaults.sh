@@ -205,5 +205,8 @@ chflags nohidden ~/Library
 # Commented out, as this is known to cause problems when saving files in Adobe Illustrator CS5 :(
 #echo "0x08000100:0" > ~/.CFUserTextEncoding
 
+# Enable text selection in QuickLook
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
