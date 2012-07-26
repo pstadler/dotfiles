@@ -13,6 +13,9 @@ export NODE_PATH=/usr/local/homebrew/lib/node_modules
 export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.6/libexec/yuicompressor-2.4.6.jar
 export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
 
+# gettext
+export PATH=/usr/local/homebrew/Cellar/gettext/0.18.1.1/bin:$PATH
+
 # python
 export PATH=/usr/local/homebrew/share/python:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
@@ -20,13 +23,8 @@ if [ -f /usr/local/homebrew/share/python/virtualenvwrapper.sh ]; then
 	source /usr/local/homebrew/share/python/virtualenvwrapper.sh
 fi
 
-# gettext
-export PATH=/usr/local/homebrew/Cellar/gettext/0.18.1.1/bin:$PATH
-
-# grails
-export GRAILS_HOME=/usr/local/homebrew/Cellar/grails/2.0.0/libexec
-
 # rvm
+PATH=$PATH:$HOME/.rvm/bin
 [[ -s "/Users/pstadler/.rvm/scripts/rvm" ]] && source "/Users/pstadler/.rvm/scripts/rvm"
 
 # base64 encode
@@ -46,5 +44,3 @@ function share {
 if [ -f ~/.bashrc_local ]; then
 	source ~/.bashrc_local
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
