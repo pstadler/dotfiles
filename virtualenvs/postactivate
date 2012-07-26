@@ -1,0 +1,5 @@
+#!/bin/zsh
+# This hook is run after every virtualenv is activated.
+PS1="$_OLD_VIRTUAL_PS1"
+_OLD_RPROMPT="$RPROMPT"
+RPROMPT="$RPROMPT %{${fg[white]}%}[%{${fg[yellow]}%}`basename \"$VIRTUAL_ENV\"`%{${fg[white]}%}]%{${reset_color}%}"
