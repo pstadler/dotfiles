@@ -16,5 +16,6 @@
 	"show_tab_close_buttons": false,
 	//"theme": "Soda Light.sublime-theme",
 	"word_wrap": true,
-	"show_full_path": true
+	"show_full_path": true,
+	"detect_slow_plugins": false
 }

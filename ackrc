@@ -1,2 +1,5 @@
 --type-add
 css=.sass,.scss,.less
+
+--type-set
+po=.po
