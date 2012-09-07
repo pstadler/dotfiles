@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dotfiles
-for symlink in bash_profile bashrc gitconfig vim vimrc zshrc ackrc
+for symlink in bash_profile bashrc gitconfig vim vimrc zshrc ackrc slate
 do
 	rm ~/.$symlink
 	ln -s $PWD/$symlink ~/.$symlink
