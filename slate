@@ -6,29 +6,30 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-alias padding 10
+alias margin 10
 alias menubarHeight 22
 
-alias fiftyPercentX (screenSizeX/2)-(${padding}*2)
-alias fiftyPercentY (screenSizeY/2)-(${padding}*2)
-alias hundredPercentX screenSizeX-(${padding}*2)
-alias hundredPercentY screenSizeY-(${padding}*2)
+alias fiftyPercentX (screenSizeX/2)-(${margin}*2)
+alias fiftyPercentY (screenSizeY/2)-(${margin}*2)
+alias hundredPercentX screenSizeX-(${margin}*2)
+alias hundredPercentY screenSizeY-(${margin}*2)
 
 # Resize to half screens
-bind left:ctrl;alt;cmd 		move 	${padding};${padding}+${menubarHeight}												${fiftyPercentX};${hundredPercentY}
-bind up:ctrl;alt;cmd 		move 	${padding};${padding}+${menubarHeight}												${hundredPercentX};${fiftyPercentY}
-bind right:ctrl;alt;cmd 	move	${fiftyPercentX}+(${padding}*3);${padding}+${menubarHeight}							${fiftyPercentX};${hundredPercentY}
-bind down:ctrl;alt;cmd 		move	${padding};${fiftyPercentY}+${menubarHeight}+(${padding}*3)		 					${hundredPercentX};${fiftyPercentY}
+bind left:ctrl;alt;cmd 		move 	${margin};${margin}+${menubarHeight}												${fiftyPercentX};${hundredPercentY}
+bind up:ctrl;alt;cmd 		move 	${margin};${margin}+${menubarHeight}												${hundredPercentX};${fiftyPercentY}
+bind right:ctrl;alt;cmd 	move	${fiftyPercentX}+(${margin}*3);${margin}+${menubarHeight}							${fiftyPercentX};${hundredPercentY}
+bind down:ctrl;alt;cmd 		move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 					${hundredPercentX};${fiftyPercentY}
 
 # Resize to corners
-bind left:ctrl;alt;shift 	move 	${padding};${padding}+${menubarHeight}												${fiftyPercentX};${fiftyPercentY}
-bind up:ctrl;alt;shift 		move 	${fiftyPercentX}+(${padding}*3);${padding}+${menubarHeight}							${fiftyPercentX};${fiftyPercentY}
-bind right:ctrl;alt;shift 	move	${fiftyPercentX}+(${padding}*3);${fiftyPercentY}+${menubarHeight}+(${padding}*3)	${fiftyPercentX};${fiftyPercentY}
-bind down:ctrl;alt;shift 	move	${padding};${fiftyPercentY}+${menubarHeight}+(${padding}*3)		 					${fiftyPercentX};${fiftyPercentY}
+bind left:ctrl;alt;shift 	move 	${margin};${margin}+${menubarHeight}												${fiftyPercentX};${fiftyPercentY}
+bind up:ctrl;alt;shift 		move 	${fiftyPercentX}+(${margin}*3);${margin}+${menubarHeight}							${fiftyPercentX};${fiftyPercentY}
+bind right:ctrl;alt;shift 	move	${fiftyPercentX}+(${margin}*3);${fiftyPercentY}+${menubarHeight}+(${margin}*3)		${fiftyPercentX};${fiftyPercentY}
+bind down:ctrl;alt;shift 	move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 					${fiftyPercentX};${fiftyPercentY}
 
+# Reset window (70%, top-center)
 bind c:ctrl;alt;cmd			move	(screenSizeX*0.3)/2;0																screenSizeX*0.7;screenSizeY*0.7
 
-# Focus Bindings
+# Focus bindings
 bind right:shift;alt focus right
 bind left:shift;alt  focus left
 bind up:shift;alt    focus up
