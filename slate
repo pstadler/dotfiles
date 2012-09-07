@@ -15,19 +15,19 @@ alias hundredPercentX screenSizeX-(${margin}*2)
 alias hundredPercentY screenSizeY-(${margin}*2)
 
 # Resize to half screens
-bind left:ctrl;alt;cmd 		move 	${margin};${margin}+${menubarHeight}												${fiftyPercentX};${hundredPercentY}
-bind up:ctrl;alt;cmd 		move 	${margin};${margin}+${menubarHeight}												${hundredPercentX};${fiftyPercentY}
-bind right:ctrl;alt;cmd 	move	${fiftyPercentX}+(${margin}*3);${margin}+${menubarHeight}							${fiftyPercentX};${hundredPercentY}
-bind down:ctrl;alt;cmd 		move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 					${hundredPercentX};${fiftyPercentY}
+bind left:ctrl;alt;cmd 		move 	${margin};${margin}+${menubarHeight}							${fiftyPercentX};${hundredPercentY}
+bind up:ctrl;alt;cmd 		move 	${margin};${margin}+${menubarHeight}							${hundredPercentX};${fiftyPercentY}
+bind right:ctrl;alt;cmd 	move	${fiftyPercentX}+(${margin}*3);${margin}+${menubarHeight}				${fiftyPercentX};${hundredPercentY}
+bind down:ctrl;alt;cmd 		move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 		${hundredPercentX};${fiftyPercentY}
 
 # Resize to corners
-bind left:ctrl;alt;shift 	move 	${margin};${margin}+${menubarHeight}												${fiftyPercentX};${fiftyPercentY}
-bind up:ctrl;alt;shift 		move 	${fiftyPercentX}+(${margin}*3);${margin}+${menubarHeight}							${fiftyPercentX};${fiftyPercentY}
+bind left:ctrl;alt;shift 	move 	${margin};${margin}+${menubarHeight}							${fiftyPercentX};${fiftyPercentY}
+bind up:ctrl;alt;shift 		move 	${fiftyPercentX}+(${margin}*3);${margin}+${menubarHeight}				${fiftyPercentX};${fiftyPercentY}
 bind right:ctrl;alt;shift 	move	${fiftyPercentX}+(${margin}*3);${fiftyPercentY}+${menubarHeight}+(${margin}*3)		${fiftyPercentX};${fiftyPercentY}
-bind down:ctrl;alt;shift 	move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 					${fiftyPercentX};${fiftyPercentY}
+bind down:ctrl;alt;shift 	move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 		${fiftyPercentX};${fiftyPercentY}
 
-# Reset window (70%, top-center)
-bind c:ctrl;alt;cmd			move	(screenSizeX*0.3)/2;0																screenSizeX*0.7;screenSizeY*0.7
+# Reset window
+bind c:ctrl;alt;cmd		move	(screenSizeX*0.4)/2;0									screenSizeX*0.6;screenSizeY*0.7
 
 # Focus bindings
 bind right:shift;alt focus right
