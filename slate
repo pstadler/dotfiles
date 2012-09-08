@@ -6,7 +6,7 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-alias margin 10
+alias margin 7
 alias menubarHeight 22
 
 alias fiftyPercentX (screenSizeX/2)-(${margin}*2)
@@ -27,7 +27,7 @@ bind right:ctrl;alt;shift 	move	${fiftyPercentX}+(${margin}*3);${fiftyPercentY}+
 bind down:ctrl;alt;shift 	move	${margin};${fiftyPercentY}+${menubarHeight}+(${margin}*3)		 		${fiftyPercentX};${fiftyPercentY}
 
 # Reset window
-bind c:ctrl;alt;cmd		move	(screenSizeX*0.4)/2;0									screenSizeX*0.6;screenSizeY*0.7
+bind .:ctrl;alt;cmd		move	(screenSizeX*0.4)/2;0									screenSizeX*0.6;screenSizeY*0.7
 
 # Focus bindings
 bind right:shift;alt focus right
