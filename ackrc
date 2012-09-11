@@ -1,5 +1,14 @@
---type-add
-css=.sass,.scss,.less
+--smart-case
 
---type-set
-po=.po
+--sort-files
+
+# SASS & LESS
+--type-add=css=.sass,.scss,.less
+--type-set=sass=.sass,.scss
+--type-set=less=.less
+
+# Translation files
+--type-set=po=.po
+
+# Markdown
+--type-set=md=.md,.markdown,.mdown,.mkdn,.mkd
