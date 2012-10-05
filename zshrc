@@ -31,8 +31,12 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 unsetopt correct_all
 zstyle ':completion:*' insert-tab false
-# don't keep duplicate entries (same command twice in a row) in history file
+
+# Don't keep duplicate entries (same command twice in a row) in history file
 setopt histignoredups
+
+# Allow comments in interactive sessions, a great way to save a line for later
+setopt INTERACTIVE_COMMENTS
 
 PROMPT='%{$fg_bold[green]%}%n%{$fg_bold[white]%}@%m%{$reset_color%} %{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
 ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
