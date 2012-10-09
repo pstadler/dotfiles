@@ -24,7 +24,6 @@ if [ -f /usr/local/homebrew/share/python/virtualenvwrapper.sh ]; then
 fi
 
 # rvm
-PATH=$PATH:$HOME/.rvm/bin
 [[ -s "/Users/pstadler/.rvm/scripts/rvm" ]] && source "/Users/pstadler/.rvm/scripts/rvm"
 
 # base64 encode
