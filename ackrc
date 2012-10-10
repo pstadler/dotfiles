@@ -12,3 +12,6 @@
 
 # Markdown
 --type-set=md=.md,.markdown,.mdown,.mkdn,.mkd
+
+# Misc
+--type-set=cfg=.cfg
