@@ -17,5 +17,6 @@
 	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"show_tab_close_buttons": false,
-	"word_wrap": true
+	"word_wrap": true,
+	"trim_trailing_white_space_on_save": true
 }

@@ -4,12 +4,11 @@
 [color]
     ui = true
 [alias]
-    st = status
+    st = status -sb
     co = checkout
     ci = commit
     br = branch
     l = log --graph --full-history --pretty=format:'%C(red)%h%C(reset) - %C(yellow)%C(yellow)%s %C(green)(%an, %cr)%C(reset)' --abbrev-commit --date=relative
-
-[branch "master"]
-    remote = origin
-    merge = refs/heads/master
+    contains = branch --contains
+[push]
+    default = simple
