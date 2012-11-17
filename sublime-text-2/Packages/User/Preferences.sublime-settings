@@ -18,5 +18,6 @@
 	"show_full_path": true,
 	"show_tab_close_buttons": false,
 	"word_wrap": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"bold_folder_labels": true
 }
