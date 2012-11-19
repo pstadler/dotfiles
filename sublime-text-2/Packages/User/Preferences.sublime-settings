@@ -19,5 +19,28 @@
 	"show_tab_close_buttons": false,
 	"word_wrap": true,
 	"trim_trailing_white_space_on_save": true,
-	"bold_folder_labels": true
+	"bold_folder_labels": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.beam"
+	]
 }
