@@ -32,10 +32,10 @@ function base64 {
 }
 
 # serve the current directory
-function share {
+function serve {
     port=${1:-8080}
     (ifconfig | grep -E 'inet.[0-9]' | grep -v -E '127.0.0.1|-->' | awk '{ printf $2}';echo ":$port") | pbcopy
-    echo "Share link copied to clipboard."
+    echo "URL copied to clipboard."
     python -m SimpleHTTPServer $port
 }
 
