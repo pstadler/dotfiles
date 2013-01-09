@@ -38,7 +38,7 @@ setopt histignoredups
 # Allow comments in interactive sessions, a great way to save a line for later
 setopt INTERACTIVE_COMMENTS
 
-PROMPT='%{$fg_bold[green]%}%n%{$fg_bold[white]%}@%m%{$reset_color%} %{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
+PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
 ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
 
 export LSCOLORS='ExFxCxDxbxegedabagacad'

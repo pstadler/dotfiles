@@ -10,7 +10,7 @@ export MANPATH=/usr/local/homebrew/share/man:$MANPATH
 
 export NODE_PATH=/usr/local/homebrew/lib/node_modules
 
-export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.6/libexec/yuicompressor-2.4.6.jar
+export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.7/libexec/yuicompressor-2.4.7.jar
 export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
 
 # gettext

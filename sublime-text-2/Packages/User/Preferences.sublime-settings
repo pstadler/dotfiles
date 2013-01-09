@@ -1,26 +1,8 @@
 {
+	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Tomorrow-Night.tmTheme",
 	"default_line_ending": "unix",
 	"detect_slow_plugins": false,
-	"find_selected_text": true,
-	"fold_buttons": false,
-	"font_size": 12.0,
-	"highlight_line": true,
-	"highlight_modified_tabs": true,
-	"hot_exit": false,
-	"use_simple_full_screen": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"indent_subsequent_lines": false,
-	"scroll_speed": 2.0,
-	"shift_tab_unindent": true,
-	"show_full_path": true,
-	"show_tab_close_buttons": false,
-	"word_wrap": true,
-	"trim_trailing_white_space_on_save": true,
-	"bold_folder_labels": true,
 	"file_exclude_patterns":
 	[
 		"*.pyc",
@@ -43,5 +25,26 @@
 		"*.psd",
 		"*.db",
 		"*.beam"
-	]
+	],
+	"find_selected_text": true,
+	"fold_buttons": false,
+	"font_size": 12.0,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_subsequent_lines": false,
+	"overlay_scroll_bars": "enabled",
+	"scroll_speed": 2.0,
+	"shift_tab_unindent": true,
+	"show_full_path": true,
+	"show_tab_close_buttons": false,
+	"soda_classic_tabs": true,
+	"theme": "Soda Light.sublime-theme",
+	"trim_trailing_white_space_on_save": true,
+	"use_simple_full_screen": true,
+	"word_wrap": true
 }
