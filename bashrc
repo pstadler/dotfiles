@@ -26,6 +26,9 @@ fi
 # rvm
 [[ -s "/Users/pstadler/.rvm/scripts/rvm" ]] && source "/Users/pstadler/.rvm/scripts/rvm"
 
+# heroku toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # base64 encode
 function base64 {
 	openssl enc -base64 -in $1 |tr -d "\n"
@@ -37,6 +40,20 @@ function serve {
     (ifconfig | grep -E 'inet.[0-9]' | grep -v -E '127.0.0.1|-->' | awk '{ printf $2}';echo ":$port") | pbcopy
     echo "URL copied to clipboard."
     python -m SimpleHTTPServer $port
+}
+
+# git commit status by author
+git-stats() {
+	author=${1-`git config --get user.name`}
+
+	echo "Commit stats for \033[1;37m$author\033[0m:"
+	git log --shortstat --author $author -i 2> /dev/null \
+		| grep 'files changed' \
+		| awk 'BEGIN{commits=0;inserted=0;deleted=0} \
+		       {commits+=1; inserted+=$4; deleted+=$6} END \
+		       {print "\033[1;34m↑↑\033[1;37m", commits \
+		       "\n\033[1;32m++\033[1;37m", inserted, \
+		       "\n\033[1;31m--\033[1;37m", deleted, "\033[0m"}'
 }
 
 # load host-specific shellrc
