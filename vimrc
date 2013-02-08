@@ -46,7 +46,7 @@ set smartcase
 set autoread
 
 " macosx clipboard instead of vim's
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " delete to the left in insert mode with backspace
 set backspace=indent,eol,start
