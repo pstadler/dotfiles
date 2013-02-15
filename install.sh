@@ -20,4 +20,4 @@ find ~/GitHub/dotfiles/sublime-text-2/Packages/User/* | while read FILE
 do
 	ln -s "$FILE" ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 done
-ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
