@@ -14,10 +14,10 @@ do
 	ln -s $PWD/virtualenvs/$symlink ~/.virtualenvs
 done
 
-# Sublime Text 2 Config and symlink
-cd 
-find ~/GitHub/dotfiles/sublime-text-2/Packages/User/* | while read FILE
+# Sublime Text 3 config symlinks
+cd
+find ~/GitHub/dotfiles/sublime-text-3/Packages/User/* | while read FILE
 do
-	ln -s "$FILE" ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
+	ln -s "$FILE" ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 done
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
