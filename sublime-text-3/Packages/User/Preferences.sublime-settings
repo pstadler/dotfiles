@@ -24,7 +24,8 @@
 		"*.class",
 		"*.psd",
 		"*.db",
-		"*.beam"
+		"*.beam",
+		"*.scssc"
 	],
 	"find_selected_text": true,
 	"fold_buttons": false,
