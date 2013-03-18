@@ -1,6 +1,6 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
+	"color_scheme": "Packages/User/Themes/Solarized (light).tmTheme",
 	"default_line_ending": "unix",
 	"detect_slow_plugins": false,
 	"file_exclude_patterns":
@@ -29,6 +29,7 @@
 	],
 	"find_selected_text": true,
 	"fold_buttons": false,
+	"font_face": "Panic Sans",
 	"font_size": 12.0,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
@@ -43,7 +44,7 @@
 	"shift_tab_unindent": true,
 	"show_full_path": true,
 	"show_tab_close_buttons": false,
-	"soda_classic_tabs": true,
+	"soda_classic_tabs": false,
 	"theme": "Soda Light.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,

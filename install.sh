@@ -16,7 +16,7 @@ done
 
 # Sublime Text 3 config symlinks
 cd
-find ~/GitHub/dotfiles/sublime-text-3/Packages/User/* | while read FILE
+find ~/GitHub/dotfiles/sublime-text-3/Packages/User/* -depth 0 | while read FILE
 do
 	ln -s "$FILE" ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 done
