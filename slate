@@ -20,10 +20,10 @@ bind right:ctrl;alt;cmd 	move	${fiftyPercentX}+(${margin}*3);${margin}+screenOri
 bind down:ctrl;alt;cmd 		move	${margin};${fiftyPercentY}+(${margin}*3)+screenOriginY				${hundredPercentX};${fiftyPercentY}
 
 # Resize to corners
-bind left:ctrl;alt;shift 	move 	${margin};${margin}+screenOriginY						${fiftyPercentX};${fiftyPercentY}
-bind up:ctrl;alt;shift 		move 	${fiftyPercentX}+(${margin}*3);${margin}+screenOriginY				${fiftyPercentX};${fiftyPercentY}
-bind right:ctrl;alt;shift 	move	${fiftyPercentX}+(${margin}*3);${fiftyPercentY}+(${margin}*3)+screenOriginY	${fiftyPercentX};${fiftyPercentY}
-bind down:ctrl;alt;shift 	move	${margin};${fiftyPercentY}+(${margin}*3)+screenOriginY				${fiftyPercentX};${fiftyPercentY}
+bind up:ctrl;alt;shift 		move 	${margin};${margin}+screenOriginY						${fiftyPercentX};${fiftyPercentY}
+bind right:ctrl;alt;shift 	move 	${fiftyPercentX}+(${margin}*3);${margin}+screenOriginY				${fiftyPercentX};${fiftyPercentY}
+bind down:ctrl;alt;shift 	move	${fiftyPercentX}+(${margin}*3);${fiftyPercentY}+(${margin}*3)+screenOriginY	${fiftyPercentX};${fiftyPercentY}
+bind left:ctrl;alt;shift 	move	${margin};${fiftyPercentY}+(${margin}*3)+screenOriginY				${fiftyPercentX};${fiftyPercentY}
 
 # Reset window
 bind .:ctrl;alt;cmd		move	(screenSizeX*0.4)/2;0								screenSizeX*0.6;screenSizeY*0.7
