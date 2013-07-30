@@ -27,6 +27,10 @@ if [ -f /usr/local/homebrew/share/python/virtualenvwrapper.sh ]; then
 	source /usr/local/homebrew/share/python/virtualenvwrapper.sh
 fi
 
+# go
+export GOPATH=~/Go
+export PATH=$PATH:$GOPATH/bin
+
 # rvm
 [[ -s "/Users/pstadler/.rvm/scripts/rvm" ]] && source "/Users/pstadler/.rvm/scripts/rvm"
 
