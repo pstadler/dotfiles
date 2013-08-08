@@ -9,10 +9,13 @@ alias top='top -o cpu'
 alias grep='grep --color'
 alias duplicate='open -a Terminal .'
 
+# homebrew
 export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/bin:$PATH
 export MANPATH=/usr/local/homebrew/share/man:$MANPATH
 
+# node.js
 export NODE_PATH=/usr/local/homebrew/lib/node_modules
+export PATH=$PATH:/usr/local/homebrew/share/npm/bin
 
 export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.7/libexec/yuicompressor-2.4.7.jar
 export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
