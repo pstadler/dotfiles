@@ -34,8 +34,8 @@ fi
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 
-# rvm
-[[ -s "/Users/pstadler/.rvm/scripts/rvm" ]] && source "/Users/pstadler/.rvm/scripts/rvm"
+# ruby
+eval "$(rbenv init -)"
 
 # heroku toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
