@@ -10,12 +10,12 @@ API.update_settings :alert_should_animate => false
 
 # reset to top center
 API.bind '.', mash_main do
-  ratio = 1.3
+  ratio = {:w => 1.7, :h => 1.4}
   win = API.focused_window
   frame = win.screen.frame_without_dock_or_menu
-  frame.x = (frame.w / 2) - (frame.w / 2 / ratio)
-  frame.h /= ratio
-  frame.w /= ratio
+  frame.x = (frame.w / 2) - (frame.w / 2 / ratio[:w])
+  frame.h /= ratio[:h]
+  frame.w /= ratio[:w]
   win.frame = frame
 end
 
