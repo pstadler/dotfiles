@@ -26,8 +26,8 @@ export PATH=/usr/local/homebrew/Cellar/gettext/0.18.1.1/bin:$PATH
 # python
 export PATH=/usr/local/homebrew/share/python:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
-if [ -f /usr/local/homebrew/share/python/virtualenvwrapper.sh ]; then
-	source /usr/local/homebrew/share/python/virtualenvwrapper.sh
+if [ -f /usr/local/homebrew/bin/virtualenvwrapper.sh ]; then
+	source /usr/local/homebrew/bin/virtualenvwrapper.sh
 fi
 
 # go
