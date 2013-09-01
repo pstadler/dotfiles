@@ -24,7 +24,6 @@ export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
 export PATH=/usr/local/homebrew/Cellar/gettext/0.18.1.1/bin:$PATH
 
 # python
-export PATH=/usr/local/homebrew/share/python:$PATH
 export WORKON_HOME=$HOME/.virtualenvs
 if [ -f /usr/local/homebrew/bin/virtualenvwrapper.sh ]; then
 	source /usr/local/homebrew/bin/virtualenvwrapper.sh
