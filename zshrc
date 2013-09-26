@@ -40,6 +40,8 @@ setopt INTERACTIVE_COMMENTS
 
 PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
 ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,bold'
+ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
 
 export LSCOLORS='ExFxCxDxbxegedabagacad'
 
