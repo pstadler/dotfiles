@@ -45,7 +45,8 @@
 	"show_full_path": true,
 	"show_tab_close_buttons": false,
 	"soda_classic_tabs": false,
-	"theme": "Soda Light.sublime-theme",
+	"soda_folder_icons": true,
+	"theme": "Soda Light 3.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
 	"word_wrap": true
