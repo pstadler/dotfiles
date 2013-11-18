@@ -20,9 +20,6 @@ export PATH=$PATH:/usr/local/homebrew/share/npm/bin
 export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.7/libexec/yuicompressor-2.4.7.jar
 export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
 
-# gettext
-export PATH=/usr/local/homebrew/Cellar/gettext/0.18.1.1/bin:$PATH
-
 # python
 export WORKON_HOME=$HOME/.virtualenvs
 if [ -f /usr/local/homebrew/bin/virtualenvwrapper.sh ]; then
