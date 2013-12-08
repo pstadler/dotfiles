@@ -1,21 +1,25 @@
 require '/Applications/Zephyros.app/Contents/Resources/libs/zephyros.rb'
 
-margin        = 5
-mash_main     = ['ctrl', 'alt', 'cmd']
-mash_corners  = ['ctrl', 'alt', 'shift']
-mash_focus    = ['alt', 'shift']
+margin       = 5
+mash_main    = ['ctrl', 'alt', 'cmd']
+mash_corners = ['ctrl', 'alt', 'shift']
+mash_focus   = ['alt', 'shift']
+
+reset_ratios = {
+  :small => {:w => 0.8,  :h => 0.9}, # screen width < 2560px
+  :large => {:w => 0.66, :h => 0.75} # screen width >= 2560px
+}
 
 API.update_settings :alert_should_animate => false
 
-
 # reset to top center
 API.bind '.', mash_main do
-  ratio = {:w => 1.7, :h => 1.4}
   win = API.focused_window
   frame = win.screen.frame_without_dock_or_menu
-  frame.x = (frame.w / 2) - (frame.w / 2 / ratio[:w])
-  frame.h /= ratio[:h]
-  frame.w /= ratio[:w]
+  ratio = reset_ratios[frame.w < 2560 ? :small : :large]
+  frame.x = (frame.w / 2) - (frame.w / 2 * ratio[:w])
+  frame.h *= ratio[:h]
+  frame.w *= ratio[:w]
   win.frame = frame
 end
 
