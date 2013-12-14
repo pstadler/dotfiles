@@ -2,8 +2,7 @@
 # Run `brew bundle Caskfile`
 
 # Install cask
-tap phinze/homebrew-cask
-install brew-cask
+install phinze/cask/brew-cask
 
 # Quick Look
 cask install qlcolorcode
