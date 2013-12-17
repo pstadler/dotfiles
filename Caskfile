@@ -4,10 +4,13 @@
 # Install cask
 install phinze/cask/brew-cask
 
-# Quick Look
+# Quick Look plugins
 cask install qlcolorcode
 cask install qlstephen
 cask install qlmarkdown
 cask install quicklook-json
 cask install quicklook-csv
 cask install betterzipql
+
+# Apps
+cask install gitx
