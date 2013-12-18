@@ -49,5 +49,6 @@
 	"theme": "Soda Light 3.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
-	"word_wrap": true
+	"word_wrap": true,
+	"enable_tab_scrolling": false
 }
