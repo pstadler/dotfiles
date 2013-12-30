@@ -64,7 +64,5 @@ git-stats() {
 			"\n\033[1;31m--\033[1;37m", deleted, "\033[0m"}'
 }
 
-# load host-specific shellrc
-if [ -f ~/.bashrc_local ]; then
-	source ~/.bashrc_local
-fi
+# load host-specific .env-local
+[ -f ~/.env-local ] && source ~/.env-local

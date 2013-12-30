@@ -45,6 +45,4 @@ ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
 
 export LSCOLORS='ExFxCxDxbxegedabagacad'
 
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi
+[ -f ~/.env ] && source ~/.env
