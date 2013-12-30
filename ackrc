@@ -2,7 +2,7 @@
 
 --sort-files
 
-# SASS & LESS
+# CSS compilers 
 --type-add=css=.sass,.scss,.less
 --type-set=sass=.sass,.scss
 --type-set=less=.less
@@ -10,8 +10,9 @@
 # Translation files
 --type-set=po=.po
 
-# Markdown
+# Template engines
 --type-set=md=.md,.markdown,.mdown,.mkdn,.mkd
+--type-set=jade=.jade
 
 # Misc
 --type-set=cfg=.cfg
