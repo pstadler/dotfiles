@@ -2156,7 +2156,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>219 375 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>725 78 710 795 0 0 1440 878 </string>
+	<string>527 380 850 498 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>48 300 850 498 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
@@ -2701,9 +2701,9 @@
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<true/>
-	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>RefreshRate</key>
 	<integer>25</integer>
 	<key>RightCommand</key>
