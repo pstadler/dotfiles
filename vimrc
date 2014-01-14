@@ -7,7 +7,7 @@ set background=dark
 
 filetype plugin indent on
 
-" tabs 
+" tabs
 set tabstop=4
 set shiftwidth=4
 
@@ -50,6 +50,9 @@ set autoread
 
 " delete to the left in insert mode with backspace
 set backspace=indent,eol,start
+
+" fix delete key in iTerm2
+exe "set <Del>=\<Esc>[3;*~"
 
 " remember last location in file
 if has("autocmd")
@@ -124,11 +127,11 @@ nmap <leader>n :set number!<CR>
 "
 " Linebreaks
 "
-set showbreak=↳\  
+set showbreak=↳\
 " Toggle showbreak
 function! ToggleShowBreak()
 	if &showbreak == ''
-		set showbreak=↳\ 
+		set showbreak=↳\
 	else
 		set showbreak=
 	endif
