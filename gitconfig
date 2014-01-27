@@ -10,8 +10,8 @@
     co = checkout
     ci = commit
     br = branch
-    l = log --graph --full-history --pretty=format:'%C(red)%h%C(reset) - %C(yellow)%C(yellow)%s %C(green)(%an, %cr)%C(reset)' --abbrev-commit --date=relative
+    l = log --graph --full-history --pretty=format:'%C(red)%h%Creset - %C(yellow)%s %C(green)(%an, %cr)%C(white)%d%C(reset)' --abbrev-commit --date=relative
     contains = branch --contains
-    swear = "!GREP_COLOR='01;31';git log --full-history --pretty=format:'%h - %C(green)%an%C(reset) - %C(yellow)%C(yellow)%s' | grep -E 'fuck|suck|shit|damn| ass ' --color"
+    swear = "!GREP_COLOR='01;31';git log --full-history --pretty=format:'%h - %C(green)%an%C(reset) - %C(yellow)%s' | grep -E 'fuck|suck|shit|damn| ass ' --color"
 [push]
     default = simple

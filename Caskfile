@@ -15,3 +15,4 @@ cask install betterzipql
 # Apps
 cask install gitx
 cask install iterm2
+cask install sequel-pro
