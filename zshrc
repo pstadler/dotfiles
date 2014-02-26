@@ -26,6 +26,8 @@ ZSH_THEME="lukerandall"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-flow brew rbenv npm gem pip heroku fabric django bundler bower docker gnu-utils colored-man zsh-syntax-highlighting)
 
+[ -f ~/.env ] && source ~/.env
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -44,5 +46,3 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
 
 export LSCOLORS='ExFxCxDxbxegedabagacad'
-
-[ -f ~/.env ] && source ~/.env
