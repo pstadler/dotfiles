@@ -12,6 +12,9 @@ cask install quicklook-json
 cask install quicklook-csv
 cask install betterzipql
 
+# Color Picker plugins
+cask install colorpicker-hex
+
 # Apps
 cask install gitx
 cask install iterm2
