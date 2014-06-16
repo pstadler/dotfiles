@@ -1,3 +1,4 @@
+# general
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -7,7 +8,8 @@ export EDITOR=vim
 export LESS='-IRX' # case insenstive search / raw color sequences / don't clear screen on exit
 alias top='top -o cpu'
 alias grep='grep --color'
-alias duplicate='open -a Terminal .'
+
+ulimit -n 1024
 
 # homebrew
 export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/bin:$PATH
