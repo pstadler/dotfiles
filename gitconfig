@@ -15,3 +15,5 @@
     swear = "!GREP_COLOR='01;31';git log --full-history --pretty=format:'%h - %C(green)%an%C(reset) - %C(yellow)%s' | grep -E 'fuck|suck|shit|damn| ass ' --color"
 [push]
     default = simple
+[diff "po"]
+    textconv=msgcat --no-location --no-wrap --sort-output
