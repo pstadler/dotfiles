@@ -1,48 +1,51 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+source ~/GitHub/dotfiles/zsh/opts.zsh
+source ~/GitHub/dotfiles/zsh/keys.zsh
+source ~/GitHub/dotfiles/zsh/theme.zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="lukerandall"
+# History
+if [ -z "$HISTFILE" ]; then
+  HISTFILE=$HOME/.zsh_history
+fi
+HISTSIZE=10000
+SAVEHIST=10000
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+# Load and run compinit
+autoload -U compinit
+compinit -i -d "${ZSH_COMPDUMP}"
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# Autocompletion
+WORDCHARS=''
+zmodload -i zsh/complist
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # case insensitive autocompletion
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01' # process list style
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w" # disable named-directories autocompletion
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+cdpath=(.)
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Enable caching
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH/cache/
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow brew brew-cask rbenv npm gem pip heroku fabric django bundler bower docker gnu-utils colored-man zsh-syntax-highlighting)
-
-[ -f ~/.env ] && source ~/.env
-
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-unsetopt correct_all
+# Discard tabs written to prompt
 zstyle ':completion:*' insert-tab false
 
-# Don't keep duplicate entries (same command twice in a row) in history file
-setopt histignoredups
+# Smart urls
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
 
-# Allow comments in interactive sessions, a great way to save a line for later
-setopt INTERACTIVE_COMMENTS
+# Plugins
+source .zsh-antigen/antigen.zsh
 
-PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
+antigen bundle zsh-users/zsh-completions src
+
+antigen bundle zsh-users/zsh-syntax-highlighting
 ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
 
-export LSCOLORS='ExFxCxDxbxegedabagacad'
+antigen apply
+
+# Source env
+[ -f ~/.env ] && source ~/.env
