@@ -1,0 +1,83 @@
+#!/usr/bin/env zsh
+
+typeset -A HOSTS EMAILS
+
+# hosts config
+HOSTS=(
+  "Higgs"     "private"
+  "Brainbug"  "private"
+  "Doppler"   "work"
+)
+
+# emails
+EMAILS=(
+  "private"  "patrick.stadler@gmail.com"
+  "work"     "patrick.stadler@centralway.com"
+)
+
+chpwd_profile_private() {
+  [[ ${profile} == ${CHPWD_PROFILE} ]] && return 1
+  export GIT_AUTHOR_EMAIL=${EMAILS[private]}
+  chpwd_change_rprompt ${profile} ps
+}
+
+chpwd_profile_work() {
+  [[ ${profile} == ${CHPWD_PROFILE} ]] && return 1
+  export GIT_AUTHOR_EMAIL=${EMAILS[work]}
+  chpwd_change_rprompt ${profile} cw
+}
+
+# check if host is configured
+DEFAULT_PROFILE=${HOSTS[$(hostname -s)]}
+if [ -z "$DEFAULT_PROFILE" ]; then
+  # echo "env_chpwd disabled (unknown host: $(hostname -s))"
+  return
+fi
+
+chpwd_change_rprompt() {
+  local profile=$1
+  local label=$2
+  local prompt_color=${fg[black]}
+  if [ "$profile" != "$DEFAULT_PROFILE" ]; then
+    prompt_color=${fg[yellow]}
+  fi
+  RPROMPT="${__ORIGINAL_RPROMPT}  %{${prompt_color}%}${label}%{${reset_color}%}"
+}
+
+# Stolen from: http://git.grml.org/?p=grml-etc-core.git;f=etc/zsh/zshrc;hb=HEAD#l1558
+#
+# chpwd_profiles(): Directory Profiles, Quickstart:
+#
+# In .zshrc.local:
+#
+#   zstyle ':chpwd:profiles:/usr/src/grml(|/|/*)'   profile grml
+#   zstyle ':chpwd:profiles:/usr/src/debian(|/|/*)' profile debian
+#
+# For details see the `grmlzshrc.5' manual page.
+chpwd_profiles() {
+  local profile context
+  local -i reexecute
+
+  context=":chpwd:profiles:$PWD"
+  zstyle -s "$context" profile profile || profile=$DEFAULT_PROFILE
+  zstyle -T "$context" re-execute && reexecute=1 || reexecute=0
+
+  if (( ${+parameters[CHPWD_PROFILE]} == 0 )); then
+    typeset -g CHPWD_PROFILE
+    local CHPWD_PROFILES_INIT=1
+    (( ${+functions[chpwd_profiles_init]} )) && chpwd_profiles_init
+  elif [[ $profile != $CHPWD_PROFILE ]]; then
+    (( ${+functions[chpwd_leave_profile_$CHPWD_PROFILE]} )) \
+        && chpwd_leave_profile_${CHPWD_PROFILE}
+  fi
+  if (( reexecute )) || [[ $profile != $CHPWD_PROFILE ]]; then
+    (( ${+functions[chpwd_profile_$profile]} )) && chpwd_profile_${profile}
+  fi
+
+  CHPWD_PROFILE="${profile}"
+  return 0
+}
+
+chpwd_functions=(${chpwd_functions} chpwd_profiles)
+
+chpwd_profiles

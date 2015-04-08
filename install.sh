@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dotfiles
-for symlink in zshrc bash_profile env gitconfig vim vimrc ackrc ruby-version zephyros.rb
+for symlink in zshrc bash_profile env env_chpwd gitconfig vim vimrc ackrc ruby-version zephyros.rb
 do
 	rm ~/.$symlink
 	ln -s $PWD/$symlink ~/.$symlink

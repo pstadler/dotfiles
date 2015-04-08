@@ -36,3 +36,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,bold'
 ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
 
 export LSCOLORS='ExFxCxDxbxegedabagacad'
+
+zstyle ":chpwd:profiles:${HOME}/GitHub(|/|/*)" profile private
+zstyle ":chpwd:profiles:${HOME}/Centralway(|/|/*)" profile work
+[ -f ~/.env_chpwd ] && source ~/.env_chpwd
