@@ -1,21 +1,48 @@
+" plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
+
+" airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+
+" gitgutter
+let g:gitgutter_override_sign_column_highlight = 0
+
+" theme
+syntax on
+if !has("gui_running")
+	let g:solarized_termtrans=1
+	"let g:solarized_termcolors=256
+endif
+set background=light
+colorscheme solarized
+"hi LineNr ctermbg=NONE ctermfg=Black
+hi SignColumn ctermbg=NONE
+
+" config
 let mapleader = ','
 
-call pathogen#infect()
-
-syntax on
-set background=dark
-
-filetype plugin indent on
+" buffers
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <leader>q :bdelete<CR>
 
 " tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " indent
 set smartindent
 set autoindent
 set smarttab
-set noexpandtab " don't insert spaces for tabs
 
 " no backups, swapfiles
 set nobackup
@@ -24,11 +51,10 @@ set noswapfile
 
 " show ruler, line numbers
 set ruler
-"set number
-hi LineNr cterm=NONE ctermfg=DarkGrey ctermbg=Black
+set number
 
 " display command
-set showcmd
+"set showcmd
 
 " allow opening buffers in background even if current is unsaved
 set hidden
@@ -59,38 +85,6 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 endif
 
-" status line
-set laststatus=2
-set title
-"set statusline+=%{fugitive#statusline()} " add current branch to statusline
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-hi StatusLine ctermfg=Grey ctermbg=Black
-hi StatusLineNC ctermfg=DarkGrey ctermbg=Black
-au InsertEnter * hi StatusLine ctermfg=Blue ctermbg=Black
-au InsertLeave * hi StatusLine ctermfg=Grey ctermbg=Black
-
-"
-" Syntastic
-"
-let g:syntastic_enable_signs=0
-
-"
-" Tabs (MiniBufExplorer)
-"
-function! MiniBufExplorer()
-	if bufname("%") == '-MiniBufExplorer-'
-		exec "normal \<cr>"
-	else
-		MiniBufExplorer
-	endif
-endfunction
-" 167 = §
-nmap <Char-167> :call MiniBufExplorer()<CR>
-nmap <S-Tab> :bp<CR>
-nmap <Tab> :bn<CR>
-
 "
 " Toggle insert mode
 "
@@ -98,22 +92,10 @@ nnoremap <C-Y> i
 imap <C-Y> <Esc>
 
 "
-" Command-T
-"
-function! CommandT()
-	if bufname("%") == '-MiniBufExplorer-'
-		exec "normal! \<c-w>\<c-w>"
-	endif
-	CommandTFlush
-	CommandT
-endfunction
-map <C-X> :call CommandT()<CR>
-
-"
 " Invisibles
 "
-hi NonText ctermfg=DarkGrey
-hi SpecialKey ctermfg=DarkGrey
+hi NonText ctermfg=Grey
+hi SpecialKey ctermfg=Grey
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
