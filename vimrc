@@ -29,6 +29,9 @@ set updatetime=750
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|node_modules$'
 
+" syntastic
+"let g:syntastic_javascript_checkers = ['eslint']
+
 " theme
 syntax on
 if !has("gui_running")
@@ -110,8 +113,8 @@ nnoremap <C-Y> i
 imap <C-Y> <Esc>
 
 " invisibles
-hi NonText ctermfg=Grey
-hi SpecialKey ctermfg=Grey
+"hi NonText ctermfg=Grey
+"hi SpecialKey ctermfg=Grey
 " shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 " use the same symbols as TextMate for tabstops and EOLs
