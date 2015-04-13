@@ -7,6 +7,12 @@ Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'w0ng/vim-hybrid'
+Plug 'Raimondi/delimitMate'
+Plug 'othree/yajs.vim'
+Plug 'moll/vim-node'
 
 call plug#end()
 
@@ -17,18 +23,27 @@ let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 
 " gitgutter
-let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_sign_column_always = 1
+set updatetime=750
+
+" ctrlp
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|node_modules$'
 
 " theme
 syntax on
 if !has("gui_running")
-	let g:solarized_termtrans=1
-	"let g:solarized_termcolors=256
+  "let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
 endif
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme hybrid
 "hi LineNr ctermbg=NONE ctermfg=Black
-hi SignColumn ctermbg=NONE
+"hi SignColumn ctermbg=NONE
+
+" speed up
+set ttyfast
+set ttyscroll=3
+set lazyredraw
 
 " config
 let mapleader = ','
@@ -38,11 +53,10 @@ nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <leader>q :bdelete<CR>
 
-" tabs
+" tabs / indent
 set tabstop=2
 set shiftwidth=2
-
-" indent
+set expandtab " spaces instead of tabs
 set smartindent
 set autoindent
 set smarttab
@@ -52,12 +66,15 @@ set nobackup
 set nowb
 set noswapfile
 
-" show ruler, line numbers
+" show ruler, line numbers, cursorline
 set ruler
 set number
+set textwidth=80
+set colorcolumn=+0
+set cursorline
 
 " display command
-"set showcmd
+set showcmd
 
 " allow opening buffers in background even if current is unsaved
 set hidden
@@ -65,10 +82,10 @@ set hidden
 " disable folding
 set nofoldenable
 
-"search
+" search
 set incsearch " find as you type
 set smartcase
-"set hlsearch
+set nohlsearch
 
 " if a file has been changed outside of vim and it has not been changed,
 " automatically re-read it
@@ -85,40 +102,42 @@ exe "set <Del>=\<Esc>[3;*~"
 
 " remember last location in file
 if has("autocmd")
-	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 endif
 
-"
-" Toggle insert mode
-"
+" toggle insert mode
 nnoremap <C-Y> i
 imap <C-Y> <Esc>
 
-"
-" Invisibles
-"
+" invisibles
 hi NonText ctermfg=Grey
 hi SpecialKey ctermfg=Grey
-" Shortcut to rapidly toggle `set list`
+" shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
-" Use the same symbols as TextMate for tabstops and EOLs
+" use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-"
-" Line Numbers
-"
+" line numbers
 nmap <leader>n :set number!<CR>
 
-"
-" Linebreaks
-"
+" line breaks
 set showbreak=↳\
-" Toggle showbreak
-function! ToggleShowBreak()
-	if &showbreak == ''
-		set showbreak=↳\
-	else
-		set showbreak=
-	endif
-endfunction
+" toggle showbreak
+fun! ToggleShowBreak()
+  if &showbreak == ''
+    set showbreak=↳\
+  else
+    set showbreak=
+  endif
+endfun
 nmap <leader>b :call ToggleShowBreak()<CR>
+
+" strip trailing whitespace on save
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
