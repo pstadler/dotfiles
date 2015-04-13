@@ -34,6 +34,7 @@ if [ -z "$DEFAULT_PROFILE" ]; then
   return
 fi
 
+__ORIGINAL_RPROMPT=$RPROMPT
 chpwd_change_rprompt() {
   local profile=$1
   local label=$2
