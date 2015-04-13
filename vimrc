@@ -3,16 +3,18 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'w0ng/vim-hybrid'
+Plug 'matze/vim-move'
+Plug 'scrooloose/nerdcommenter'
 Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/syntastic'
+Plug 'w0ng/vim-hybrid'
 Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'Lokaltog/vim-easymotion'
 
 call plug#end()
 
@@ -24,10 +26,13 @@ let g:airline#extensions#tabline#enabled = 1
 
 " gitgutter
 let g:gitgutter_sign_column_always = 1
-set updatetime=750
+set updatetime=150
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|node_modules$'
+
+" move
+let g:move_key_modifier = 'C'
 
 " syntastic
 "let g:syntastic_javascript_checkers = ['eslint']
@@ -63,6 +68,8 @@ set expandtab " spaces instead of tabs
 set smartindent
 set autoindent
 set smarttab
+" shift-tab to unindent
+imap <S-Tab> <C-o><<
 
 " no backups, swapfiles
 set nobackup
