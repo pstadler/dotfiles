@@ -13,6 +13,7 @@ Plug 'scrooloose/syntastic'
 Plug 'w0ng/vim-hybrid'
 Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
+Plug 'altercation/vim-colors-solarized'
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'Lokaltog/vim-easymotion'
 
@@ -51,7 +52,7 @@ colorscheme hybrid
 " speed up
 set ttyfast
 set ttyscroll=3
-set lazyredraw
+"set lazyredraw
 
 " config
 let mapleader = ','
@@ -84,7 +85,7 @@ set colorcolumn=+0
 set cursorline
 
 " display command
-set showcmd
+"set showcmd
 
 " allow opening buffers in background even if current is unsaved
 set hidden
@@ -96,6 +97,9 @@ set nofoldenable
 set incsearch " find as you type
 set smartcase
 set nohlsearch
+
+" keep lines when scrolling
+set scrolloff=3
 
 " if a file has been changed outside of vim and it has not been changed,
 " automatically re-read it

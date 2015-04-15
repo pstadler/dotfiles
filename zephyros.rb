@@ -1,6 +1,6 @@
 require '/Applications/Zephyros.app/Contents/Resources/libs/zephyros.rb'
 
-margin       = 5
+margin       = 0
 mash_main    = ['ctrl', 'alt', 'cmd']
 mash_corners = ['ctrl', 'alt', 'shift']
 mash_focus   = ['alt', 'shift']
