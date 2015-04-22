@@ -14,6 +14,7 @@ Plug 'w0ng/vim-hybrid'
 Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'Lokaltog/vim-easymotion'
 
@@ -27,10 +28,11 @@ let g:airline#extensions#tabline#enabled = 1
 
 " gitgutter
 let g:gitgutter_sign_column_always = 1
-set updatetime=150
+set updatetime=750
 
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn)|node_modules$'
+let g:ctrlp_show_hidden = 1
 
 " move
 let g:move_key_modifier = 'C'
@@ -57,10 +59,11 @@ set ttyscroll=3
 " config
 let mapleader = ','
 
-" buffers
+" buffers / files
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <leader>q :bdelete<CR>
+nnoremap <leader><leader> :w<CR>
 
 " tabs / indent
 set tabstop=2
@@ -82,6 +85,7 @@ set ruler
 set number
 set textwidth=80
 set colorcolumn=+0
+set formatoptions-=t
 set cursorline
 
 " display command
@@ -106,7 +110,7 @@ set scrolloff=3
 set autoread
 
 " macosx clipboard instead of vim's
-" set clipboard=unnamed
+set clipboard=unnamed
 
 " delete to the left in insert mode with backspace
 set backspace=indent,eol,start
