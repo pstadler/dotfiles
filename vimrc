@@ -54,7 +54,7 @@ colorscheme hybrid
 " speed up
 set ttyfast
 set ttyscroll=3
-"set lazyredraw
+" set lazyredraw
 
 " config
 let mapleader = ','
@@ -80,13 +80,14 @@ set nobackup
 set nowb
 set noswapfile
 
-" show ruler, line numbers, cursorline
+" ruler, line numbers, cursorline
 set ruler
 set number
 set textwidth=80
 set colorcolumn=+0
 set formatoptions-=t
-set cursorline
+" set cursorline " may slows things down dramatically
+" hi clear CursorLine " don't highlight whole line as it's slow
 
 " display command
 "set showcmd
@@ -139,11 +140,11 @@ set listchars=tab:▸\ ,eol:¬
 nmap <leader>n :set number!<CR>
 
 " line breaks
-set showbreak=↳\
+set showbreak=↳
 " toggle showbreak
 fun! ToggleShowBreak()
   if &showbreak == ''
-    set showbreak=↳\
+    set showbreak=↳
   else
     set showbreak=
   endif
