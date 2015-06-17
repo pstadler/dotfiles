@@ -2,7 +2,7 @@
 
 --sort-files
 
-# CSS compilers 
+# CSS compilers
 --type-add=css=.sass,.scss,.less
 --type-set=sass=.sass,.scss
 --type-set=less=.less

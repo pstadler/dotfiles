@@ -18,7 +18,8 @@ ZSH_THEME="lukerandall"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower docker gnu-utils colored-man zsh-syntax-highlighting)
+plugins=(git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower \
+          aws docker gnu-utils colored-man zsh-syntax-highlighting)
 
 [ -f ~/.env ] && source ~/.env
 

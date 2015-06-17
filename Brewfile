@@ -7,3 +7,4 @@ install ruby-build
 install vim --override-system-vi
 install watch
 install wget
+install nvm
