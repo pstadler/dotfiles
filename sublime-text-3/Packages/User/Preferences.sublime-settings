@@ -1,7 +1,7 @@
 {
 	"animation_enabled": false,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/Solarized (light) (SublimePythonIDE).tmTheme",
+	"color_scheme": "Packages/User/Themes/Solarized (light).tmTheme",
 	"default_line_ending": "unix",
 	"detect_slow_plugins": false,
 	"enable_tab_scrolling": false,
