@@ -4,15 +4,15 @@ typeset -A HOSTS EMAILS
 
 # hosts config
 HOSTS=(
-  "Higgs"     "private"
-  "Brainbug"  "private"
-  "Doppler"   "work"
+  "Higgs"        "private"
+  "Brainbug"     "private"
+  "Sledgehammer" "work"
 )
 
 # emails
 EMAILS=(
   "private"  "patrick.stadler@gmail.com"
-  "work"     "patrick.stadler@centralway.com"
+  "work"     "patrick.stadler@liip.ch"
 )
 
 chpwd_profile_private() {
@@ -24,7 +24,7 @@ chpwd_profile_private() {
 chpwd_profile_work() {
   [[ ${profile} == ${CHPWD_PROFILE} ]] && return 1
   export GIT_AUTHOR_EMAIL=${EMAILS[work]}
-  chpwd_change_rprompt ${profile} cw
+  chpwd_change_rprompt ${profile} work
 }
 
 # check if host is configured

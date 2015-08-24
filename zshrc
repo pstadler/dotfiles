@@ -19,7 +19,7 @@ ZSH_THEME="lukerandall"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower \
-          aws docker gnu-utils colored-man zsh-syntax-highlighting)
+          aws docker gnu-utils colored-man zsh-syntax-highlighting composer)
 
 [ -f ~/.env ] && source ~/.env
 
@@ -39,5 +39,5 @@ ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
 export LSCOLORS='ExFxCxDxbxegedabagacad'
 
 zstyle ":chpwd:profiles:${HOME}/GitHub(|/|/*)" profile private
-zstyle ":chpwd:profiles:${HOME}/Centralway(|/|/*)" profile work
+zstyle ":chpwd:profiles:${HOME}/Work(|/|/*)" profile work
 [ -f ~/.env_chpwd ] && source ~/.env_chpwd
