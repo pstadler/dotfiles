@@ -13,6 +13,7 @@
 # Template engines
 --type-set=md=.md,.markdown,.mdown,.mkdn,.mkd
 --type-set=jade=.jade
+--type-add=html=.twig
 
 # Misc
 --type-set=cfg=.cfg
