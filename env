@@ -14,6 +14,10 @@ ulimit -n 1024
 # homebrew
 export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:$PATH
 export MANPATH=/usr/local/homebrew/share/man:$MANPATH
+export C_INCLUDE_PATH=/usr/local/homebrew/include:$C_INCLUDE_PATH
+export OBJC_INCLUDE_PATH=/usr/local/homebrew/include:$OBJC_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/usr/local/homebrew/include:$CPLUS_INCLUDE_PATH
+export OBJCPLUS_INCLUDE_PATH=/usr/local/homebrew/include:$OBJCPLUS_INCLUDE_PATH
 
 # node.js
 export NODE_PATH=/usr/local/homebrew/lib/node_modules

@@ -2,7 +2,7 @@
 
 echo "Installing dotfiles:"
 for symlink in zshrc bash_profile env env_chpwd gitconfig \
-                vim vimrc ackrc nvmrc ruby-version zephyros.rb
+                vim vimrc ackrc nvmrc ruby-version hammerspoon
 do
   echo " symlink: ~/.$symlink"
 	rm ~/.$symlink
