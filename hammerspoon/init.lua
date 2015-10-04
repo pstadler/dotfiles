@@ -13,8 +13,8 @@ local spacesModifier = "ctrl"
 local animationDuration = 0
 
 local centeredWindowRatios = {
-  small = { w = 0.8, h = 0.8 },
-  large = { w = 0.66, h = 0.66 }
+  small = { w = 0.8, h = 0.8 }, -- screen width < 2560
+  large = { w = 0.66, h = 0.66 } -- screen width >= 2560
 }
 
 
@@ -115,7 +115,7 @@ hs.hotkey.bind(mash.focus, "left", focus("west"))
 local spacesCount = spaces.count()
 local spacesModifiers = {"fn", spacesModifier}
 
--- infinitely cycle through spaces using ctrl+left/right to trigger cmd+[1..n]
+-- infinitely cycle through spaces using ctrl+left/right to trigger ctrl+[1..n]
 hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(o)
   local keyCode = o:getKeyCode()
   local modifiers = o:getFlags()
