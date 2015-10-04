@@ -59,18 +59,18 @@ end)
 
 -- bottom right
 hs.hotkey.bind(mash.corner, "down", function()
-  hs.grid.set(hs.window.focusedWindow(), "0,1 1x1")
+  hs.grid.set(hs.window.focusedWindow(), "1,1 1x1")
 end)
 
 -- bottom left
 hs.hotkey.bind(mash.corner, "left", function()
-  hs.grid.set(hs.window.focusedWindow(), "0,0 1x1")
+  hs.grid.set(hs.window.focusedWindow(), "0,1 1x1")
 end)
 
 -- top center
 hs.hotkey.bind(mash.split, ".", function()
   local win = hs.window.focusedWindow()
-  if win == nil then return end
+  if not win then return end
 
   local f = win:frame()
   local max = win:screen():frame()
@@ -118,16 +118,21 @@ local spacesModifiers = {"fn", spacesModifier}
 
 -- infinitely cycle through spaces using ctrl+left/right to trigger cmd+[1..n]
 hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(o)
-  local passed = hs.fnutils.every(o:getFlags(), function(_, flag)
-    return hs.fnutils.contains(spacesModifiers, flag)
+  local keyCode = o:getKeyCode()
+  local modifiers = o:getFlags()
+
+  -- check if correct key code
+  if keyCode ~= 123 and keyCode ~= 124 then return end
+  if not modifiers[spacesModifier] then return end
+
+  -- check if no other modifiers where pressed
+  local passed = hs.fnutils.every(modifiers, function(_, modifier)
+    return hs.fnutils.contains(spacesModifiers, modifier)
   end)
 
   if not passed then return end
 
-  local keyCode = o:getKeyCode()
-
-  if keyCode ~= 123 and keyCode ~= 124 then return end
-
+  -- switch spaces
   local currentSpace = spaces.currentSpace()
   local nextSpace
 
