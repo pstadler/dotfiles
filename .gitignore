@@ -4,3 +4,4 @@ vim/plugged
 ._*
 hammerspoon/*
 !hammerspoon/init.lua
+!hammerspoon/caffeine-on.pdf
