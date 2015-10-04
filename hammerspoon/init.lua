@@ -4,6 +4,7 @@ spaces = require("hs._asm.undocumented.spaces")
 local mash = {
   split   = {"ctrl", "alt", "cmd"},
   corner  = {"ctrl", "alt", "shift"},
+  focus   = {"ctrl", "alt"},
   utils   = {"ctrl", "alt", "cmd"}
 }
 
@@ -24,60 +25,64 @@ local logger = hs.logger.new("config", "verbose")
 
 -- Resize windows
 local function adjust(x, y, w, h)
-  local win = hs.window.focusedWindow()
-  if not win then return end
+  return function()
+    local win = hs.window.focusedWindow()
+    if not win then return end
 
-  local f = win:frame()
-  local max = win:screen():frame()
+    local f = win:frame()
+    local max = win:screen():frame()
 
-  f.w = math.floor(max.w * w)
-  f.h = math.floor(max.h * h)
-  f.x = math.floor((max.w * x) + max.x)
-  f.y = math.floor((max.h * y) + max.y)
+    f.w = math.floor(max.w * w)
+    f.h = math.floor(max.h * h)
+    f.x = math.floor((max.w * x) + max.x)
+    f.y = math.floor((max.h * y) + max.y)
 
-  win:setFrame(f)
+    win:setFrame(f)
+  end
 end
 
 local function adjustCenterTop(w, h)
-  local win = hs.window.focusedWindow()
-  if not win then return end
+  return function()
+    local win = hs.window.focusedWindow()
+    if not win then return end
 
-  local f = win:frame()
-  local max = win:screen():frame()
+    local f = win:frame()
+    local max = win:screen():frame()
 
-  f.w = math.floor(max.w * w)
-  f.h = math.floor(max.h * h)
-  f.x = math.floor((max.w / 2) - (f.w / 2))
-  f.y = max.y
-  win:setFrame(f)
+    f.w = math.floor(max.w * w)
+    f.h = math.floor(max.h * h)
+    f.x = math.floor((max.w / 2) - (f.w / 2))
+    f.y = max.y
+    win:setFrame(f)
+  end
 end
 
 -- top half
-hs.hotkey.bind(mash.split, "up", function() adjust(0, 0, 1, 0.5) end)
+hs.hotkey.bind(mash.split, "up", adjust(0, 0, 1, 0.5))
 
 -- right half
-hs.hotkey.bind(mash.split, "right", function() adjust(0.5, 0, 0.5, 1) end)
+hs.hotkey.bind(mash.split, "right", adjust(0.5, 0, 0.5, 1))
 
 -- bottom half
-hs.hotkey.bind(mash.split, "down", function() adjust(0, 0.5, 1, 0.5) end)
+hs.hotkey.bind(mash.split, "down", adjust(0, 0.5, 1, 0.5))
 
 -- left half
-hs.hotkey.bind(mash.split, "left", function() adjust(0, 0, 0.5, 1) end)
+hs.hotkey.bind(mash.split, "left", adjust(0, 0, 0.5, 1))
 
 -- top left
-hs.hotkey.bind(mash.corner, "up", function() adjust(0, 0, 0.5, 0.5) end)
+hs.hotkey.bind(mash.corner, "up", adjust(0, 0, 0.5, 0.5))
 
 -- top right
-hs.hotkey.bind(mash.corner, "right", function() adjust(0.5, 0, 0.5, 0.5) end)
+hs.hotkey.bind(mash.corner, "right", adjust(0.5, 0, 0.5, 0.5))
 
 -- bottom right
-hs.hotkey.bind(mash.corner, "down", function() adjust(0.5, 0.5, 0.5, 0.5) end)
+hs.hotkey.bind(mash.corner, "down", adjust(0.5, 0.5, 0.5, 0.5))
 
 -- bottom left
-hs.hotkey.bind(mash.corner, "left", function() adjust(0, 0.5, 0.5, 0.5) end)
+hs.hotkey.bind(mash.corner, "left", adjust(0, 0.5, 0.5, 0.5))
 
 -- fullscreen
-hs.hotkey.bind(mash.split, ",", function() adjustCenterTop(1, 1) end)
+hs.hotkey.bind(mash.split, ",", adjustCenterTop(1, 1))
 
 -- top center small
 hs.hotkey.bind(mash.split, ".", function()
@@ -85,8 +90,25 @@ hs.hotkey.bind(mash.split, ".", function()
   if not win then return end
 
   local size = win:screen():frame().w >= 2560 and "large" or "small"
-  adjustCenterTop(centeredWindowRatios[size].w, centeredWindowRatios[size].h)
+  adjustCenterTop(centeredWindowRatios[size].w, centeredWindowRatios[size].h)()
 end)
+
+-- Focus windows
+local function focus(direction)
+  local fn = "focusWindow" .. (direction:gsub("^%l", string.upper))
+
+  return function()
+    local win = hs.window:focusedWindow()
+    if not win then return end
+
+    win[fn]()
+  end
+end
+
+hs.hotkey.bind(mash.focus, "up", focus("north"))
+hs.hotkey.bind(mash.focus, "right", focus("east"))
+hs.hotkey.bind(mash.focus, "down", focus("south"))
+hs.hotkey.bind(mash.focus, "left", focus("west"))
 
 
 -- Spaces
@@ -129,15 +151,14 @@ end):start()
 
 
 -- Wifi
-local wifiWatcher = nil
 function ssidChangedCallback()
     local ssid = hs.wifi.currentNetwork()
     if ssid then
       hs.alert.show("Network connected: " .. ssid)
     end
 end
-wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
-wifiWatcher:start()
+
+hs.wifi.watcher.new(ssidChangedCallback):start()
 
 hs.hotkey.bind(mash.utils, "r", function()
   local ssid = hs.wifi.currentNetwork()
