@@ -147,3 +147,30 @@ hs.hotkey.bind(mash.utils, "r", function()
   hs.execute("networksetup -setairportpower en0 off")
   hs.execute("networksetup -setairportpower en0 on")
 end)
+
+
+-- Caffeinate
+-- Icon shamelessly copied from https://github.com/BrianGilbert/.hammerspoon
+local caffeine = hs.menubar.new(false)
+caffeine:setIcon("caffeine-on.pdf")
+
+local function setCaffeineMenuItem(state)
+  if state then
+    caffeine:returnToMenuBar()
+  else
+    caffeine:removeFromMenuBar()
+  end
+end
+
+function toggleCaffeine()
+  setCaffeineMenuItem(hs.caffeinate.toggle("systemIdle"))
+end
+
+if caffeine then
+  caffeine:setClickCallback(toggleCaffeine)
+  setCaffeineMenuItem(hs.caffeinate.get("systemIdle"))
+end
+
+hs.hotkey.bind(mash.utils, "c", toggleCaffeine)
+
+hs.alert.show("Hammerspoon!")
