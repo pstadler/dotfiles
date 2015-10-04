@@ -12,7 +12,7 @@ alias grep='grep --color'
 ulimit -n 1024
 
 # homebrew
-export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/homebrew/bin:/usr/local/homebrew/sbin:$PATH
 export MANPATH=/usr/local/homebrew/share/man:$MANPATH
 
 # node.js
