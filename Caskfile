@@ -2,20 +2,20 @@
 # Run `brew bundle Caskfile`
 
 # Install cask
-install phinze/cask/brew-cask
+tap 'caskroom/cask'
 
 # Quick Look plugins
-cask install qlcolorcode
-cask install qlstephen
-cask install qlmarkdown
-cask install quicklook-json
-cask install quicklook-csv
-cask install betterzipql
+cask 'qlcolorcode'
+cask 'qlstephen'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'quicklook-csv'
+cask 'betterzipql'
 
 # Color Picker plugins
-cask install colorpicker-hex
+cask 'colorpicker-hex'
 
 # Apps
-cask install gitx
-cask install iterm2
-cask install sequel-pro
+# cask 'gitx'
+# cask 'iterm2'
+# cask 'sequel-pro'

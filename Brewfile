@@ -1,10 +1,7 @@
-install ack
-install node
-install pow
-install python
-install rbenv
-install ruby-build
-install vim --override-system-vi
-install watch
-install wget
-install nvm
+brew 'ack'
+brew 'rbenv'
+brew 'ruby-build'
+brew 'vim', args: ['--override-system-vi']
+brew 'watch'
+brew 'wget'
+brew 'nvm'
