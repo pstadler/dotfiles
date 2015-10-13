@@ -116,9 +116,11 @@ local spacesCount = spaces.count()
 local spacesModifiers = {"fn", spacesModifier}
 
 -- infinitely cycle through spaces using ctrl+left/right to trigger ctrl+[1..n]
-hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(o)
+local spacesEventtap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(o)
   local keyCode = o:getKeyCode()
   local modifiers = o:getFlags()
+
+  --logger.i(keyCode, hs.inspect(modifiers))
 
   -- check if correct key code
   if keyCode ~= 123 and keyCode ~= 124 then return end
