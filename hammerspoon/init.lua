@@ -151,6 +151,11 @@ local spacesEventtap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, functi
   return true
 end):start()
 
+hs.hotkey.bind(mash.utils, "e", function()
+  -- this is to bind the spacesEventtap variable to a long-lived function in
+  -- order to prevent GC from doing their evil business
+  hs.alert.show("Fast space switching enabled: " .. tostring(spacesEventtap:isEnabled()))
+end)
 
 -- Wifi
 function ssidChangedCallback()
