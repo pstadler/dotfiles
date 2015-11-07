@@ -185,8 +185,10 @@ caffeine:setIcon("caffeine-on.pdf")
 local function setCaffeineMenuItem(state)
   if state then
     caffeine:returnToMenuBar()
+    hs.alert.show("Caffeinated!")
   else
     caffeine:removeFromMenuBar()
+    hs.alert.show("Decaf")
   end
 end
 
