@@ -13,6 +13,7 @@
     l = log --graph --full-history --pretty=format:'%C(red)%h%Creset - %C(yellow)%s %C(green)(%an, %cr)%C(white)%d%C(reset)' --abbrev-commit --date=relative
     contains = branch --contains
     swear = "!GREP_COLOR='01;31';git log --full-history --pretty=format:'%h - %C(green)%an%C(reset) - %C(yellow)%s' | grep -E 'fuck|suck|shit|damn| ass ' --color"
+    fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD |grep '^author '|sort|uniq -c|sort -nr"
 [push]
     default = simple
 [diff "po"]

@@ -15,6 +15,7 @@ Plug 'othree/yajs.vim'
 Plug 'moll/vim-node'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
+Plug 'editorconfig/editorconfig-vim'
 "Plug 'nanotech/jellybeans.vim'
 "Plug 'Lokaltog/vim-easymotion'
 

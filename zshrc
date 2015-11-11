@@ -16,10 +16,8 @@ ZSH_THEME="lukerandall"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower \
-          aws docker gnu-utils colored-man zsh-syntax-highlighting composer)
+plugins=(fasd git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower \
+          aws docker gnu-utils colored-man zsh-syntax-highlighting vagrant composer)
 
 [ -f ~/.env ] && source ~/.env
 
