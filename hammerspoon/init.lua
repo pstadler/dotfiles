@@ -23,6 +23,12 @@ hs.window.animationDuration = animationDuration
 local logger = hs.logger.new("config", "verbose")
 
 
+-- Reload config
+hs.hotkey.bind(mash.utils, "-", function()
+  hs.reload()
+end)
+
+
 -- Resize windows
 local function adjust(x, y, w, h)
   return function()
@@ -180,7 +186,7 @@ end)
 -- Caffeinate
 -- Icon shamelessly copied from https://github.com/BrianGilbert/.hammerspoon
 local caffeine = hs.menubar.new(false)
-caffeine:setIcon("caffeine-on.pdf")
+caffeine:setIcon(os.getenv("HOME") .. "/.hammerspoon/caffeine-on.pdf")
 
 local function setCaffeineMenuItem(state)
   if state then
