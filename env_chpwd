@@ -38,7 +38,7 @@ __ORIGINAL_RPROMPT=$RPROMPT
 chpwd_change_rprompt() {
   local profile=$1
   local label=$2
-  local prompt_color=${fg[black]}
+  local prompt_color=${fg[gray]}
   if [ "$profile" != "$DEFAULT_PROFILE" ]; then
     prompt_color=${fg[yellow]}
   fi

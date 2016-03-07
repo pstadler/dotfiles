@@ -2,7 +2,7 @@
     name = Patrick Stadler
     email = patrick.stadler@gmail.com
 [core]
-    pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less
+    pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
 [color]
     ui = true
 [alias]

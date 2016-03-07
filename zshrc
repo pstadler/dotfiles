@@ -17,7 +17,8 @@ ZSH_THEME="lukerandall"
 # DISABLE_AUTO_TITLE="true"
 
 plugins=(fasd git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower \
-          aws docker gnu-utils colored-man zsh-syntax-highlighting vagrant composer)
+          aws docker gnu-utils colored-man zsh-syntax-highlighting vagrant \
+          history-substring-search)
 
 [ -f ~/.env ] && source ~/.env
 

@@ -20,12 +20,10 @@ export MANPATH=/usr/local/homebrew/share/man:$MANPATH
 #export OBJCPLUS_INCLUDE_PATH=/usr/local/homebrew/include:$OBJCPLUS_INCLUDE_PATH
 
 # node.js
+export PATH=./node_modules/.bin:$PATH
 export NODE_PATH=/usr/local/homebrew/lib/node_modules
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-export YUI_COMPRESSOR=/usr/local/homebrew/Cellar/yuicompressor/2.4.7/libexec/yuicompressor-2.4.7.jar
-export NATURALDOCS_DIR=/usr/local/homebrew/Cellar/naturaldocs/1.52/libexec
 
 # python
 export WORKON_HOME=$HOME/.virtualenvs
