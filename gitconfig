@@ -1,6 +1,7 @@
 [user]
     name = Patrick Stadler
     email = patrick.stadler@gmail.com
+	signingkey = E870EE00
 [core]
     pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
 [color]
@@ -18,3 +19,5 @@
     default = simple
 [diff "po"]
     textconv=msgcat --no-location --no-wrap --sort-output
+[commit]
+	gpgsign = true
