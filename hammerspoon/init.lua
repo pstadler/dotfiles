@@ -47,7 +47,7 @@ local function adjust(x, y, w, h)
   end
 end
 
-local function adjustCenterTop(w, h)
+local function adjustCenter(w, h)
   return function()
     local win = hs.window.focusedWindow()
     if not win then return end
@@ -58,7 +58,7 @@ local function adjustCenterTop(w, h)
     f.w = math.floor(max.w * w)
     f.h = math.floor(max.h * h)
     f.x = math.floor((max.w / 2) - (f.w / 2))
-    f.y = max.y
+    f.y = math.floor((max.h / 2) - (f.h / 2))
     win:setFrame(f)
   end
 end
@@ -88,7 +88,7 @@ hs.hotkey.bind(mash.corner, "down", adjust(0.5, 0.5, 0.5, 0.5))
 hs.hotkey.bind(mash.corner, "left", adjust(0, 0.5, 0.5, 0.5))
 
 -- fullscreen
-hs.hotkey.bind(mash.split, ",", adjustCenterTop(1, 1))
+hs.hotkey.bind(mash.split, ",", adjustCenter(1, 1))
 
 -- top center small
 hs.hotkey.bind(mash.split, ".", function()
@@ -96,7 +96,7 @@ hs.hotkey.bind(mash.split, ".", function()
   if not win then return end
 
   local size = win:screen():frame().w >= 2560 and "large" or "small"
-  adjustCenterTop(centeredWindowRatios[size].w, centeredWindowRatios[size].h)()
+  adjustCenter(centeredWindowRatios[size].w, centeredWindowRatios[size].h)()
 end)
 
 -- Focus windows
