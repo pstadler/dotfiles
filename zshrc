@@ -16,9 +16,8 @@ ZSH_THEME="lukerandall"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-plugins=(fasd git git-flow brew brew-cask rbenv npm gem pip heroku bundler bower \
-          aws docker gnu-utils colored-man zsh-syntax-highlighting vagrant \
-          history-substring-search)
+plugins=(fasd git brew brew-cask rbenv npm docker gnu-utils colored-man \
+          zsh-syntax-highlighting vagrant history-substring-search kubectl)
 
 [ -f ~/.env ] && source ~/.env
 
