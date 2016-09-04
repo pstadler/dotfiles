@@ -1,7 +1,7 @@
 [user]
     name = Patrick Stadler
     email = patrick.stadler@gmail.com
-	  #signingkey = E870EE00
+    #signingkey = E870EE00
 [core]
     pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
 [color]
@@ -13,7 +13,6 @@
     br = branch
     l = log --graph --full-history --pretty=format:'%C(red)%h%Creset - %C(yellow)%s %C(green)(%an, %cr)%C(white)%d%C(reset)' --abbrev-commit --date=relative
     contains = branch --contains
-    swear = "!GREP_COLOR='01;31';git log --full-history --pretty=format:'%h - %C(green)%an%C(reset) - %C(yellow)%s' | grep -E 'fuck|suck|shit|damn| ass ' --color"
     fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD |grep '^author '|sort|uniq -c|sort -nr"
 [push]
     default = simple
