@@ -1,7 +1,6 @@
 # Use `brew bundle` to install the packages listed below
 
 # Packages
-brew 'vcsh'
 brew 'ack'
 brew 'vim', args: ['--override-system-vi']
 brew 'watch'
