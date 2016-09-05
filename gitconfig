@@ -4,6 +4,7 @@
     #signingkey = E870EE00
 [core]
     pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
+    excludesfile = ~/.gitignore
 [color]
     ui = true
 [alias]
