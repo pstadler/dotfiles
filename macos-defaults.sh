@@ -168,8 +168,7 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
-
+defaults write NSGlobalDomain KeyRepeat -int 1
 # Set a shorter Delay until key repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
@@ -314,7 +313,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Enable the MacBook Air SuperDrive on any Mac
-sudo nvram boot-args="mbasd=1"
+# sudo nvram boot-args="mbasd=1"
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
