@@ -6,6 +6,8 @@ brew 'vim', args: ['--override-system-vi']
 brew 'watch'
 brew 'wget'
 brew 'nvm'
+brew 'fasd'
+brew 'git'
 
 # Casks
 tap 'caskroom/cask'
