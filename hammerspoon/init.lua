@@ -151,7 +151,11 @@ local spacesEventtap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, functi
     nextSpace = currentSpace ~= spacesCount and currentSpace + 1 or 1
   end
 
-  hs.eventtap.keyStroke({spacesModifier}, string.format("%d", nextSpace))
+  local event = require("hs.eventtap").event
+  event.newKeyEvent({spacesModifier}, string.format("%d", nextSpace), true):post()
+  event.newKeyEvent({spacesModifier}, string.format("%d", nextSpace), false):post()
+  -- TODO: replace with this once > 0.9.50 has been released
+  --hs.eventtap.keyStroke({spacesModifier}, string.format("%d", nextSpace), 0)
 
   -- stop propagation
   return true
