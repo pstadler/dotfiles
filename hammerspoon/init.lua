@@ -20,11 +20,13 @@ local centeredWindowRatios = {
 local defaultBrightness = 60
 local nightModeBrightness = 6
 
-
 -- Setup
-hs.window.animationDuration = animationDuration
 local logger = hs.logger.new("config", "verbose")
 
+hs.window.animationDuration = animationDuration
+
+hs.grid.setGrid('2x2')
+hs.grid.setMargins('0x0')
 
 -- Reload config
 hs.hotkey.bind(mash.utils, "-", function()
@@ -33,91 +35,64 @@ end)
 
 
 -- Resize windows
-local function adjust(x, y, w, h)
+local function adjustWindow(cell)
   return function()
     local win = hs.window.focusedWindow()
     if not win then return end
 
-    local f = win:frame()
-    local max = win:screen():frame()
-
-    f.w = math.floor(max.w * w)
-    f.h = math.floor(max.h * h)
-    f.x = math.floor((max.w * x) + max.x)
-    f.y = math.floor((max.h * y) + max.y)
-
-    win:setFrame(f)
-  end
-end
-
-local function adjustCenter(w, h)
-  return function()
-    local win = hs.window.focusedWindow()
-    if not win then return end
-
-    local f = win:frame()
-    local max = win:screen():frame()
-
-    f.w = math.floor(max.w * w)
-    f.h = math.floor(max.h * h)
-    f.x = math.floor((max.w / 2) - (f.w / 2))
-    f.y = math.floor((max.h / 2) - (f.h / 2))
-    win:setFrame(f)
+    hs.grid.set(win, cell)
   end
 end
 
 -- top half
-hs.hotkey.bind(mash.split, "up", adjust(0, 0, 1, 0.5))
+hs.hotkey.bind(mash.split, "up", adjustWindow('0,0 2x1'))
 
 -- right half
-hs.hotkey.bind(mash.split, "right", adjust(0.5, 0, 0.5, 1))
+hs.hotkey.bind(mash.split, "right", adjustWindow('1,0 1x2'))
 
 -- bottom half
-hs.hotkey.bind(mash.split, "down", adjust(0, 0.5, 1, 0.5))
+hs.hotkey.bind(mash.split, "down", adjustWindow('0,1 2x1'))
 
 -- left half
-hs.hotkey.bind(mash.split, "left", adjust(0, 0, 0.5, 1))
+hs.hotkey.bind(mash.split, "left", adjustWindow('0,0 1x2'))
 
 -- top left
-hs.hotkey.bind(mash.corner, "up", adjust(0, 0, 0.5, 0.5))
+hs.hotkey.bind(mash.corner, "up", adjustWindow('0,0 1x1'))
 
 -- top right
-hs.hotkey.bind(mash.corner, "right", adjust(0.5, 0, 0.5, 0.5))
+hs.hotkey.bind(mash.corner, "right", adjustWindow('1,0 1x1'))
 
 -- bottom right
-hs.hotkey.bind(mash.corner, "down", adjust(0.5, 0.5, 0.5, 0.5))
+hs.hotkey.bind(mash.corner, "down", adjustWindow('1,1 1x1'))
 
 -- bottom left
-hs.hotkey.bind(mash.corner, "left", adjust(0, 0.5, 0.5, 0.5))
+hs.hotkey.bind(mash.corner, "left", adjustWindow('0,1 1x1'))
 
 -- fullscreen
-hs.hotkey.bind(mash.split, ",", adjustCenter(1, 1))
+hs.hotkey.bind(mash.split, ",", hs.grid.maximizeWindow)
 
--- top center small
+-- center small
 hs.hotkey.bind(mash.split, ".", function()
   local win = hs.window.focusedWindow()
   if not win then return end
 
-  local size = win:screen():frame().w >= 2560 and "large" or "small"
-  adjustCenter(centeredWindowRatios[size].w, centeredWindowRatios[size].h)()
+  local f = win:frame()
+  local screen = win:screen():frame()
+  local size = screen.w >= 2560 and "large" or "small"
+
+  f.w = math.floor(screen.w * centeredWindowRatios[size].w)
+  f.h = math.floor(screen.h * centeredWindowRatios[size].h)
+  f.x = math.floor((screen.w / 2) - (f.w / 2))
+  f.y = math.floor((screen.h / 2) - (f.h / 2))
+  win:setFrame(f)
 end)
 
+
 -- Focus windows
-local function focus(direction)
-  local fn = "focusWindow" .. (direction:gsub("^%l", string.upper))
-
-  return function()
-    local win = hs.window:focusedWindow()
-    if not win then return end
-
-    win[fn]()
-  end
-end
-
-hs.hotkey.bind(mash.focus, "up", focus("north"))
-hs.hotkey.bind(mash.focus, "right", focus("east"))
-hs.hotkey.bind(mash.focus, "down", focus("south"))
-hs.hotkey.bind(mash.focus, "left", focus("west"))
+hs.hotkey.bind(mash.focus, "up", hs.window.focusWindowNorth)
+hs.hotkey.bind(mash.focus, "right", hs.window.focusWindowEast)
+hs.hotkey.bind(mash.focus, "down", hs.window.focusWindowSouth)
+hs.hotkey.bind(mash.focus, "left", hs.window.focusWindowWest)
 
 
 -- Spaces
