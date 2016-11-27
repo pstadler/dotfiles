@@ -17,6 +17,9 @@ local centeredWindowRatios = {
   large = { w = 0.66, h = 0.66 } -- screen width >= 2560
 }
 
+local defaultBrightness = 60
+local nightModeBrightness = 6
+
 
 -- Setup
 hs.window.animationDuration = animationDuration
@@ -269,6 +272,33 @@ end
 hs.battery.watcher.new(batteryChangedCallback):start()
 
 hs.hotkey.bind(mash.utils, "b", showBatteryStatus)
+
+
+-- Night mode toggle
+local previousBrightness = defaultBrightness
+
+hs.hotkey.bind(mash.utils, "n", function()
+  local currentBrightness = hs.brightness.get()
+  if nightModeBrightness / currentBrightness >= 0.9 then
+    -- night off
+    hs.brightness.set(previousBrightness)
+  else
+    -- night on
+    previousBrightness = currentBrightness
+    hs.brightness.set(nightModeBrightness)
+  end
+end)
+
+
+-- Audio device mute toggle
+hs.hotkey.bind(mash.utils, "m", function()
+  local audiodevice = hs.audiodevice.defaultOutputDevice()
+  if audiodevice:muted() then
+    audiodevice:setMuted(false)
+  else
+    audiodevice:setMuted(true)
+  end
+end)
 
 
 -- All set
