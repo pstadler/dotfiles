@@ -269,8 +269,11 @@ end)
 
 -- Audio device mute toggle
 hs.hotkey.bind(mash.utils, "m", function()
-  local audiodevice = hs.audiodevice.defaultOutputDevice()
-  audiodevice:setMuted(not audiodevice:muted())
+  local audio = hs.audiodevice.defaultOutputDevice()
+  local wasMuted = audio:muted()
+  audio:setMuted(not wasMuted)
+
+  hs.alert.show(wasMuted and string.format("Volume %.0f%%", audio:volume()) or "Muted")
 end)
 
 
