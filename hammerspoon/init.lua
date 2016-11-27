@@ -211,22 +211,24 @@ function showBatteryStatus()
   if hs.battery.isCharging() then
     local pct = hs.battery.percentage()
     local untilFull = hs.battery.timeToFullCharge()
-    message = "Charging"
+    message = "Charging:"
 
     if untilFull == -1 then
       message = string.format("%s %.0f%% (calculating...)", message, pct);
     else
-      message = string.format("%s %.0f%% (%s remaining)", message, pct, minutesToHours(untilFull))
+      local watts = hs.battery.watts()
+      message = string.format("%s %.0f%% (%s remaining @ %.1fW)", message, pct, minutesToHours(untilFull), watts)
     end
   elseif hs.battery.powerSource() == "Battery Power" then
     local pct = hs.battery.percentage()
     local untilEmpty = hs.battery.timeRemaining()
-    message = "Battery"
+    message = "Battery:"
 
     if untilEmpty == -1 then
       message = string.format("%s %.0f%% (calculating...)", message, pct)
     else
-      message = string.format("%s %.0f%% (%s remaining)", message, pct, minutesToHours(untilEmpty))
+      local watts = hs.battery.watts()
+      message = string.format("%s %.0f%% (%s remaining @ %.1fW)", message, pct, minutesToHours(untilEmpty), watts)
     end
   else
     message = "Fully charged"
