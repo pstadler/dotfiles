@@ -1,7 +1,8 @@
 " plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ervandew/supertab'
@@ -27,6 +28,7 @@ set noshowmode
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='hybrid'
 
 " gitgutter
 let g:gitgutter_sign_column_always = 1
