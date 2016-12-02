@@ -28,48 +28,64 @@ hs.alert.defaultStyle.textSize = 25
 
 hs.window.animationDuration = animationDuration
 
-hs.grid.setGrid('2x2')
-hs.grid.setMargins('0x0')
+hs.grid.setGrid("10x2")
+hs.grid.setMargins("0x0")
 
 -- Reload config
 hs.hotkey.bind(mash.utils, "-", function()
   hs.reload()
 end)
 
-
 -- Resize windows
-local function adjustWindow(cell)
+local gridPositions = {
+  -- splits
+  top              = { ["50-50"] = "0,0 10x1", ["60-40"] = "0,0 10x1" },
+  right            = { ["50-50"] = "5,0 5x2",  ["60-40"] = "6,0 4x2" },
+  bottom           = { ["50-50"] = "0,1 10x1", ["60-40"] = "0,1 10x1" },
+  left             = { ["50-50"] = "0,0 5x2",  ["60-40"] = "0,0 6x2" },
+  -- corners
+  ["top-left"]     = { ["50-50"] = "0,0 5x1", ["60-40"] = "0,0 6x1" },
+  ["top-right"]    = { ["50-50"] = "5,0 5x1", ["60-40"] = "6,0 4x1" },
+  ["bottom-right"] = { ["50-50"] = "5,1 5x1", ["60-40"] = "6,1 4x1" },
+  ["bottom-left"]  = { ["50-50"] = "0,1 5x1", ["60-40"] = "0,1 6x1" }
+}
+
+local function adjustWindow(position)
+  local gridPosition = gridPositions[position]
+
   return function()
     local win = hs.window.focusedWindow()
     if not win then return end
 
-    hs.grid.set(win, cell)
+    local grid = spaces.currentSpace() == 3 and "60-40" or "50-50"
+
+    hs.grid.set(win, gridPosition[grid])
   end
 end
 
 -- top half
-hs.hotkey.bind(mash.split, "up", adjustWindow('0,0 2x1'))
+hs.hotkey.bind(mash.split, "up", adjustWindow("top"))
 
 -- right half
-hs.hotkey.bind(mash.split, "right", adjustWindow('1,0 1x2'))
+hs.hotkey.bind(mash.split, "right", adjustWindow("right"))
 
 -- bottom half
-hs.hotkey.bind(mash.split, "down", adjustWindow('0,1 2x1'))
+hs.hotkey.bind(mash.split, "down", adjustWindow("bottom"))
 
 -- left half
-hs.hotkey.bind(mash.split, "left", adjustWindow('0,0 1x2'))
+hs.hotkey.bind(mash.split, "left", adjustWindow("left"))
 
 -- top left
-hs.hotkey.bind(mash.corner, "up", adjustWindow('0,0 1x1'))
+hs.hotkey.bind(mash.corner, "up", adjustWindow("top-left"))
 
 -- top right
-hs.hotkey.bind(mash.corner, "right", adjustWindow('1,0 1x1'))
+hs.hotkey.bind(mash.corner, "right", adjustWindow("top-right"))
 
 -- bottom right
-hs.hotkey.bind(mash.corner, "down", adjustWindow('1,1 1x1'))
+hs.hotkey.bind(mash.corner, "down", adjustWindow("bottom-right"))
 
 -- bottom left
-hs.hotkey.bind(mash.corner, "left", adjustWindow('0,1 1x1'))
+hs.hotkey.bind(mash.corner, "left", adjustWindow("bottom-left"))
 
 -- fullscreen
 hs.hotkey.bind(mash.split, ",", hs.grid.maximizeWindow)
