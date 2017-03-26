@@ -2,6 +2,4 @@ vim/.netrwhist
 vim/plugged
 .DS_Store
 ._*
-hammerspoon/*
-!hammerspoon/init.lua
-!hammerspoon/caffeine-on.pdf
+hammerspoon/hs
