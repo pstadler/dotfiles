@@ -4,8 +4,7 @@ typeset -A HOSTS EMAILS
 
 # hosts config
 HOSTS=(
-  "Higgs"        "private"
-  "Brainbug"     "private"
+  "Einstein"     "private"
   "Sledgehammer" "work"
 )
 
