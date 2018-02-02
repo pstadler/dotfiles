@@ -31,7 +31,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='hybrid'
 
 " gitgutter
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 set updatetime=750
 
 " ctrlp
