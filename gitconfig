@@ -15,6 +15,7 @@
     l = log --graph --full-history --pretty=format:'%C(red)%h%Creset - %C(yellow)%s %C(green)(%an, %cr)%C(white)%d%C(reset)' --abbrev-commit --date=relative
     contains = branch --contains
     fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD |grep '^author '|sort|uniq -c|sort -nr"
+    pfr = "!git push origin HEAD:refs/for/$1"
 [push]
     default = current
 [diff "po"]
