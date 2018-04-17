@@ -5,13 +5,13 @@ typeset -A HOSTS EMAILS
 # hosts config
 HOSTS=(
   "Einstein"     "private"
-  "Sledgehammer" "work"
+  "Crowbar"      "work"
 )
 
 # emails
 EMAILS=(
   "private"  "patrick.stadler@gmail.com"
-  "work"     "patrick.stadler@liip.ch"
+  "work"     "patrick.stadler@datatrans.ch"
 )
 
 chpwd_profile_private() {
