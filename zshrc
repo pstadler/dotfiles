@@ -1,41 +1,33 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# homebrew setup
+export BREW_PREFIX=/usr/local/homebrew
+export PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin:$PATH
+fpath=($BREW_PREFIX/share/zsh/site-functions $fpath)
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="lukerandall"
+# oh-my-zsh compat
+export ZSH_CACHE_DIR=$HOME/Library/Caches/antibody/plugin_cache
+[ ! -d $ZSH_CACHE_DIR ] && mkdir -p $ZSH_CACHE_DIR
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+source "/Users/pstadler/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+for file in ~/GitHub/dotfiles/zsh/*.zsh; do
+  zpl ice lucid; zpl snippet $file
+done
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+zpl ice wait"1" atinit"zpcompinit" lucid; zpl light zsh-users/zsh-completions
+zpl ice wait"1" atinit"zpcompinit" lucid; zpl snippet https://github.com/docker/cli/raw/master/contrib/completion/zsh/_docker
+zpl ice wait"1" lucid; zpl snippet OMZ::plugins/gnu-utils/gnu-utils.plugin.zsh
+zpl ice wait"1" lucid; zpl snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+zpl ice wait"1" pick"fasd" as"program" atload:'eval "$(fasd --init auto)"' lucid; zplugin light clvv/fasd
+zpl ice wait"!1" atload"FAST_HIGHLIGHT_STYLES[path]='fg=white,bold';FAST_HIGHLIGHT_STYLES[path-to-dir]='fg=white,bold'" lucid; zpl light zdharma/fast-syntax-highlighting
+zpl ice wait"1" lucid; zpl light zsh-users/zsh-history-substring-search
 
-plugins=(fasd git brew brew-cask npm docker gnu-utils colored-man-pages \
-          zsh-syntax-highlighting vagrant history-substring-search kubectl)
+for file in ~/GitHub/dotfiles/zsh/plugins/*.zsh; do
+  zpl ice wait"1" lucid; zpl snippet $file
+done
 
+
+
+# Source env
 [ -f ~/.env ] && source ~/.env
-
-source $ZSH/oh-my-zsh.sh
-
-zstyle ':completion:*' insert-tab false # don't write tabs to prompt
-
-setopt hist_reduce_blanks # remove blanks for commands
-setopt interactive_comments # allow interactive comments
-unsetopt cdablevars # vars shouldn't expand to directory names
-
-PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
-ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
-
-export LSCOLORS='ExFxCxDxbxegedabagacad'
-
-zstyle ":chpwd:profiles:${HOME}/GitHub(|/|/*)" profile private
-zstyle ":chpwd:profiles:${HOME}/Work(|/|/*)" profile work
-[ -f ~/.env_chpwd ] && source ~/.env_chpwd

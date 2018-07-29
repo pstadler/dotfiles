@@ -12,20 +12,15 @@ alias grep='grep --color'
 ulimit -n 1024
 
 # homebrew
-HOMEBREW_DIR=/usr/local/homebrew
-
-export PATH=$HOMEBREW_DIR/bin:$HOMEBREW_DIR/sbin:$PATH
-export MANPATH=$HOMEBREW_DIR/share/man:$MANPATH
-#export C_INCLUDE_PATH=$HOMEBREW_DIR/include:$C_INCLUDE_PATH
-#export OBJC_INCLUDE_PATH=$HOMEBREW_DIR/include:$OBJC_INCLUDE_PATH
-#export CPLUS_INCLUDE_PATH=$HOMEBREW_DIR/include:$CPLUS_INCLUDE_PATH
-#export OBJCPLUS_INCLUDE_PATH=$HOMEBREW_DIR/include:$OBJCPLUS_INCLUDE_PATH
+export MANPATH=$BREW_PREFIX/share/man:$MANPATH
 export HOMEBREW_NO_ANALYTICS=1
+#export C_INCLUDE_PATH=$BREW_PREFIX/include:$C_INCLUDE_PATH
+#export OBJC_INCLUDE_PATH=$BREW_PREFIX/include:$OBJC_INCLUDE_PATH
+#export CPLUS_INCLUDE_PATH=$BREW_PREFIX/include:$CPLUS_INCLUDE_PATH
+#export OBJCPLUS_INCLUDE_PATH=$BREW_PREFIX/include:$OBJCPLUS_INCLUDE_PATH
 
 # node.js
 export PATH=./node_modules/.bin:$PATH
-export NVM_DIR=~/.nvm
-source $HOMEBREW_DIR/opt/nvm/nvm.sh
 
 # go
 export GOPATH=~/Go
