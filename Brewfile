@@ -8,6 +8,7 @@ brew 'wget'
 brew 'nvm'
 brew 'fasd'
 brew 'git'
+brew 'colordiff'
 
 # Casks
 tap 'caskroom/cask'
