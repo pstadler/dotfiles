@@ -9,6 +9,7 @@ brew 'nvm'
 brew 'fasd'
 brew 'git'
 brew 'colordiff'
+brew 'tmux'
 
 # Casks
 tap 'caskroom/cask'
@@ -20,7 +21,3 @@ cask 'qlstephen'
 cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
-cask 'betterzipql'
-
-# Color Picker plugins
-cask 'colorpicker-hex'

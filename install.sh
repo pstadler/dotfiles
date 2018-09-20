@@ -2,7 +2,7 @@
 
 echo "Installing dotfiles:"
 for symlink in zshrc bash_profile env env_chpwd gitconfig gitignore \
-                vim vimrc ackrc nvmrc hammerspoon
+                vim vimrc ackrc nvmrc hammerspoon tmux.conf
 do
   echo " symlink: ~/.$symlink"
 	rm ~/.$symlink
