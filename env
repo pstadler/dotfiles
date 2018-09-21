@@ -24,8 +24,6 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # node.js
 export PATH=./node_modules/.bin:$PATH
-export NVM_DIR=~/.nvm
-source $HOMEBREW_DIR/opt/nvm/nvm.sh
 
 # go
 export GOPATH=~/Go

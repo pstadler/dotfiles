@@ -5,13 +5,23 @@ brew 'ack'
 brew 'vim', args: ['--with-override-system-vi']
 brew 'watch'
 brew 'wget'
-brew 'nvm'
 brew 'fasd'
 brew 'git'
 brew 'colordiff'
 brew 'tmux'
+tap 'mscharley/homebrew'
+brew 'alacritty'
 
-# Casks
+# Fonts
+tap 'caskroom/fonts'
+cask 'font-fira-code'
+cask 'font-m-plus'
+cask 'font-hack'
+cask 'font-iosevka'
+# tap robertgzr/homebrew-tap
+# cask 'font-iosevka-inziu' args: ['--with-ss05', '--with-termlig']
+
+# Applications
 tap 'caskroom/cask'
 cask_args appdir: '/Applications'
 
