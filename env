@@ -42,10 +42,15 @@ function serve {
   python -m SimpleHTTPServer $port
 }
 
+# tmux
+function tmx {
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new -A -s default
+}
+
+if command -v tmux > /dev/null; then
+  tmx
+fi
+
 # load host-specific .env-local
 [ -f ~/.env-local ] && source ~/.env-local
 
-# tmux
-if command -v tmux > /dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new -A -s default
-fi
