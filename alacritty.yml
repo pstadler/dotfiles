@@ -292,7 +292,7 @@ key_bindings:
   - { key: Copy,                    action: Copy                         }
   - { key: H,        mods: Command, action: Hide                         }
   - { key: Q,        mods: Command, action: Quit                         }
-  - { key: W,        mods: Command, action: Quit                         }
+# - { key: W,        mods: Command, action: Quit                         }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
@@ -404,5 +404,8 @@ key_bindings:
   - { key: Key9,     mods: Alt,           chars: "\x7d"                  }
   - { key: Equals,                        chars: "\xb4"                  }
   - { key: Equals,   mods: Shift,         chars: "\x60"                  }
-  #- { key: N,        mods: Alt,           chars: "\u007E"                }
   - { key: G,        mods: Alt,           chars: "\x40"                  }
+  # tmux commands (split pane vertically, new window, close pane
+  - { key: D,        mods: Command,       chars: "\x04"                  }
+  - { key: T,        mods: Command,       chars: "\x0e"                  }
+  - { key: W,        mods: Command,       chars: "\x18"                  }
