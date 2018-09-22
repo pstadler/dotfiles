@@ -29,7 +29,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: false
+  decorations: none
 
 scrolling:
   # How many lines of scrollback to keep,
