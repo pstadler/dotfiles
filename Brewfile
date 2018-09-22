@@ -10,7 +10,7 @@ brew 'git'
 brew 'colordiff'
 brew 'tmux'
 tap 'mscharley/homebrew'
-brew 'alacritty'
+brew 'alacritty', args: ['HEAD']
 
 # Fonts
 tap 'caskroom/fonts'
