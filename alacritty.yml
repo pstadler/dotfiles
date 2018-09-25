@@ -404,5 +404,5 @@ key_bindings:
   - { key: G,        mods: Alt,           chars: "\x40"                        }
   # tmux commands (split pane vertically, new window, close pane
   - { key: D,        mods: Command,       chars: "\x04"                        }
-  - { key: T,        mods: Command,       chars: "\x0e"                        }
+  - { key: T,        mods: Command,       chars: "\x14"                        }
   - { key: W,        mods: Command,       chars: "\x18"                        }
