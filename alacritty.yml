@@ -112,7 +112,7 @@ font:
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: false
+  use_thin_strokes: true
 
 # Should display the render timer
 render_timer: false
@@ -208,6 +208,10 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
+  url:
+    launcher: open
+    modifiers: Control
+
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
@@ -221,10 +225,10 @@ hide_cursor_when_typing: false
 # - Block
 # - Underline
 # - Beam
-cursor_style: Block
-
-# Whether the cursor should be a hollow block on window focus loss
-unfocused_hollow_cursor: true
+cursor:
+  style: Block
+  # Whether the cursor should be a hollow block on window focus loss
+  unfocused_hollow: true
 
 # Live config reload (changes require restart)
 live_config_reload: true
