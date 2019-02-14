@@ -20,7 +20,7 @@ ZSH_THEME="lukerandall"
 NVM_LAZY_LOAD=true
 
 plugins=(fasd git brew brew-cask npm docker gnu-utils colored-man-pages \
-          zsh-syntax-highlighting history-substring-search kubectl zsh-nvm)
+          history-substring-search fast-syntax-highlighting kubectl zsh-nvm)
 
 [ -f ~/.env ] && source ~/.env
 
@@ -33,11 +33,12 @@ setopt interactive_comments # allow interactive comments
 unsetopt cdablevars # vars shouldn't expand to directory names
 
 PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
-ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=white,bold'
-ZSH_HIGHLIGHT_STYLES[path_approx]='fg=none'
-
 export LSCOLORS='ExFxCxDxbxegedabagacad'
+
+# https://github.com/zdharma/fast-syntax-highlighting
+FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path]='fg=white,bold'
+FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path-to-dir]='fg=white,bold'
+FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}global-alias]='fg=white,bold,bg=none'
 
 zstyle ":chpwd:profiles:${HOME}/GitHub(|/|/*)" profile private
 zstyle ":chpwd:profiles:${HOME}/Work(|/|/*)" profile work
