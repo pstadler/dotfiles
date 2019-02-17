@@ -9,8 +9,7 @@ brew 'fasd'
 brew 'git'
 brew 'colordiff'
 brew 'tmux'
-tap 'mscharley/homebrew'
-brew 'alacritty', args: ['HEAD']
+cask 'alacritty'
 
 # Fonts
 tap 'caskroom/fonts'
