@@ -9,6 +9,9 @@ brew 'fasd'
 brew 'git'
 brew 'colordiff'
 brew 'tmux'
+brew 'jq'
+
+# Apps
 cask 'alacritty'
 
 # Fonts
