@@ -16,9 +16,9 @@ env:
 window:
   # Window dimensions in character acolumns and lines
   # (changes require restart)
-  dimensions:
-    columns: 240
-    lines: 48
+  #dimensions:
+  #  columns: 240
+  #  lines: 48
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
