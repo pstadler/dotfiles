@@ -19,7 +19,7 @@ ZSH_THEME="lukerandall"
 # https://github.com/lukechilds/zsh-nvm
 NVM_LAZY_LOAD=true
 
-plugins=(fasd git brew brew-cask npm docker gnu-utils colored-man-pages \
+plugins=(fasd git brew npm docker gnu-utils colored-man-pages \
           history-substring-search fast-syntax-highlighting kubectl zsh-nvm)
 
 [ -f ~/.env ] && source ~/.env
