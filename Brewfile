@@ -22,6 +22,7 @@ cask 'font-m-plus'
 cask 'font-hack'
 cask 'font-iosevka'
 cask 'font-ubuntu'
+cask 'font-input'
 # tap robertgzr/homebrew-tap
 # cask 'font-iosevka-inziu' args: ['--with-ss05', '--with-termlig']
 
