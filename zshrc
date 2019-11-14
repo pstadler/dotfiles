@@ -30,6 +30,7 @@ zstyle ':completion:*' insert-tab false # don't write tabs to prompt
 
 setopt hist_reduce_blanks # remove blanks for commands
 setopt interactive_comments # allow interactive comments
+setopt transient_rprompt # only show rprompt on last line
 unsetopt cdablevars # vars shouldn't expand to directory names
 
 PROMPT='%{$fg_bold[blue]%}%~%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
