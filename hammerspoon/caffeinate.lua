@@ -8,17 +8,14 @@ end
 
 function setCaffeineMenuItem(isIdle)
   if isIdle then
-    if not caffeine then
-      caffeine = hs.menubar.new()
-      caffeine:setIcon(os.getenv("HOME") .. "/.hammerspoon/caffeine-on.pdf")
-      caffeine:setClickCallback(toggleCaffeine)
-    else
-      caffeine:returnToMenuBar()
-    end
+    caffeine = hs.menubar.new()
+    caffeine:setIcon(hs.image.imageFromPath(os.getenv("HOME") .. "/.hammerspoon/caffeine-on.pdf"))
+    caffeine:setClickCallback(toggleCaffeine)
 
     hs.alert.show("Caffeinated!")
   else
-    caffeine:removeFromMenuBar()
+    caffeine:delete()
+
     hs.alert.show("Decaf")
   end
 end
