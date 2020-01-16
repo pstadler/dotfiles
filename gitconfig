@@ -16,6 +16,7 @@
     contains = branch --contains
     fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD |grep '^author '|sort|uniq -c|sort -nr"
     pfr = "!git push origin HEAD:refs/for/$1"
+    branches = for-each-ref --sort='-authordate:iso8601' --format='%(color:green)%(authordate:iso8601)  %(color:yellow)%(authorname)%09%(color:white)%(refname:short)' refs/heads
 [push]
     default = current
 [diff "po"]

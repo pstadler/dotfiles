@@ -20,11 +20,11 @@ tap 'caskroom/fonts'
 cask 'font-fira-code'
 cask 'font-m-plus'
 cask 'font-hack'
-cask 'font-iosevka'
+#cask 'font-iosevka'
 cask 'font-ubuntu'
 cask 'font-input'
-# tap robertgzr/homebrew-tap
-# cask 'font-iosevka-inziu' args: ['--with-ss05', '--with-termlig']
+tap robertgzr/homebrew-tap
+#cask 'font-iosevka-inziu' args: ['--with-ss05', '--with-termlig']
 
 # Applications
 tap 'caskroom/cask'
