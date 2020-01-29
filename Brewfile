@@ -10,7 +10,6 @@ brew 'git'
 brew 'colordiff'
 brew 'tmux'
 brew 'jq'
-brew 'reattach-to-user-namespace' # used by tmux
 
 # Apps
 cask 'alacritty'
