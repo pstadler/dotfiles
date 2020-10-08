@@ -23,3 +23,5 @@
     textconv=msgcat --no-location --no-wrap --sort-output
 [commit]
     #gpgsign = true
+[pull]
+    rebase = true
