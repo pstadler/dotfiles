@@ -29,6 +29,11 @@ export PATH=./node_modules/.bin:$PATH
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 
+# code insiders
+if ! command -v code > /dev/null; then
+  alias code=code-insiders
+fi
+
 # base64 encode
 function base64 {
   openssl enc -base64 -in $1 |tr -d "\n"
