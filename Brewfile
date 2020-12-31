@@ -2,7 +2,7 @@
 
 # Packages
 brew 'ack'
-brew 'vim' #, args: ['--with-override-system-vi']
+brew 'vim', args: ['--build-from-source']
 brew 'watch'
 brew 'wget'
 brew 'fasd'
