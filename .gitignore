@@ -3,3 +3,4 @@ vim/plugged
 .DS_Store
 ._*
 hammerspoon/hs
+x86-bin/*

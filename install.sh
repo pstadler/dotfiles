@@ -29,3 +29,12 @@ echo " install $ZSH_PLUGIN_DIR/fast-syntax-highlighting"
 echo " install $ZSH_PLUGIN_DIR/zsh-nvm"
 [ -d $ZSH_PLUGIN_DIR/zsh-nvm ] \
   || git clone git@github.com:lukechilds/zsh-nvm.git $ZSH_PLUGIN_DIR/zsh-nvm
+
+echo "Linking x86 binaries..."
+sudo -v # ask for password upfront
+for symlink in $(ls x86-bin)
+do
+  echo " symlink /usr/local/bin/$symlink"
+  sudo unlink /usr/local/bin/$symlink
+  sudo ln -s $PWD/x86-bin/$symlink /usr/local/bin/$symlink
+done
