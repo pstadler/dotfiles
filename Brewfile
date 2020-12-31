@@ -2,7 +2,6 @@
 
 # Packages
 brew 'ack'
-brew 'vim', args: ['--build-from-source']
 brew 'watch'
 brew 'wget'
 brew 'fasd'
@@ -11,6 +10,7 @@ brew 'colordiff'
 brew 'tmux'
 brew 'jq', args: ["HEAD"]
 brew 'htop'
+brew 'vim', args: ['--build-from-source']
 
 # CLIs
 brew 'terraform'
