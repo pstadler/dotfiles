@@ -10,6 +10,7 @@ brew 'colordiff'
 brew 'tmux'
 brew 'jq', args: ["HEAD"]
 brew 'htop'
+brew 'aha' # shell escape codes to html (Uebersicht.app)
 brew 'vim', args: ['--build-from-source']
 
 # CLIs
