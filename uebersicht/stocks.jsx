@@ -4,7 +4,7 @@ export const command = withPath`~/GitHub/ticker.sh/ticker.sh $(cat ~/Dropbox/Cod
 
 export const refreshFrequency = 20 * 1000
 
-export const className = withDefaultStyles({ left: '10%' }, `
+export const className = withDefaultStyles({ left: '185px' }, `
   .bold { color: white }
 `)
 

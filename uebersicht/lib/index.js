@@ -10,7 +10,7 @@ export function withDefaultStyles ({
     right,
     bottom,
     fontFamily = 'Iosevka Term SS05',
-    fontSize = '13px'
+    fontSize = '12px'
   } = {},
   custom = ''
   ) {
