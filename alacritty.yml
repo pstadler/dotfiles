@@ -220,7 +220,7 @@ mouse:
 
   url:
     launcher: open
-    modifiers: Control
+    modifiers: Command
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
