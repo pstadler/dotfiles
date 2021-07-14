@@ -11,7 +11,7 @@
 [pull]
     rebase = true
 [rebase]
-	autoStash = true
+    autoStash = true
 [diff "po"]
     textconv=msgcat --no-location --no-wrap --sort-output
 [alias]
@@ -24,3 +24,8 @@
     fame = "!git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain HEAD |grep '^author '|sort|uniq -c|sort -nr"
     pfr = "!git push origin HEAD:refs/for/$1"
     branches = for-each-ref --sort='-authordate:iso8601' --format='%(color:green)%(authordate:iso8601)  %(color:yellow)%(authorname)%09%(color:white)%(refname:short)' refs/heads
+[filter "lfs"]
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
