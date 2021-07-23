@@ -23,7 +23,8 @@ export MANPATH=$HOMEBREW_DIR/share/man:$MANPATH
 export HOMEBREW_NO_ANALYTICS=1
 
 # node.js
-export PATH=./node_modules/.bin:$PATH
+export PATH=./node_modules/.bin:$HOME/.fnm:$PATH
+eval "`fnm env`"
 
 # go
 export GOPATH=~/Go

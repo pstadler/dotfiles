@@ -26,9 +26,6 @@ echo " symlink $ZSH_PLUGIN_DIR/kubectl"
 echo " install $ZSH_PLUGIN_DIR/fast-syntax-highlighting"
 [ -d $ZSH_PLUGIN_DIR/fast-syntax-highlighting ] \
   || git clone git@github.com:zdharma/fast-syntax-highlighting.git $ZSH_PLUGIN_DIR/fast-syntax-highlighting
-echo " install $ZSH_PLUGIN_DIR/zsh-nvm"
-[ -d $ZSH_PLUGIN_DIR/zsh-nvm ] \
-  || git clone git@github.com:lukechilds/zsh-nvm.git $ZSH_PLUGIN_DIR/zsh-nvm
 
 echo "Linking x86 binaries..."
 sudo -v # ask for password upfront

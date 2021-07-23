@@ -17,6 +17,7 @@ brew 'vim', args: ['--build-from-source']
 brew 'terraform'
 brew 'kubectl'
 brew 'wireguard-tools'
+brew 'fnm'
 
 # Apps
 #cask 'alacritty'

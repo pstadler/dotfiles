@@ -16,11 +16,8 @@ ZSH_THEME="lukerandall"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# https://github.com/lukechilds/zsh-nvm
-NVM_LAZY_LOAD=true
-
 plugins=(fasd git brew npm docker gnu-utils colored-man-pages \
-          history-substring-search fast-syntax-highlighting kubectl zsh-nvm)
+          history-substring-search fast-syntax-highlighting kubectl)
 
 [ -f ~/.env ] && source ~/.env
 
