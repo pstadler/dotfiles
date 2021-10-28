@@ -1,6 +1,6 @@
 import { withDefaultStyles, withPath } from './lib'
 
-export const command = withPath`~/Dropbox/Code/crypto.sh`
+export const command = withPath`~/Library/Mobile\\ Documents/com~apple~CloudDocs/Data/Code/crypto.sh`
 
 export const refreshFrequency = 60 * 1000
 

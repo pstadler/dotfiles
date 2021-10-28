@@ -30,6 +30,8 @@ export function withDefaultStyles ({
     .white { color: #fff; }
     .green { color: #2f731a; }
     .red { color: #a63333; }
+    .blue { color: #4269f5; }
+    .yellow { color: #f5da42 }
 
     .bg-white { background-color: #fff; }
     .bg-green { background-color: #2f731a; }

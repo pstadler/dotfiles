@@ -1,6 +1,6 @@
 import { withPath, withDefaultStyles } from './lib'
 
-const SYMBOLS = ['ES=F', 'YM=F', 'NQ=F', 'RTY=F', 'QQQ', '^SPX', '^DJI']
+const SYMBOLS = ['ES=F', 'YM=F', 'NQ=F', 'RTY=F', 'QQQ', '^SPX', '^DJI', 'usdchf=X']
 
 export const command = `curl -s "https://query1.finance.yahoo.com/v7/finance/quote?lang=en-US&region=US&corsDomain=finance.yahoo.com&fields=regularMarketChangePercent,preMarketChangePercent&symbols=${SYMBOLS.join(',')}"`
 

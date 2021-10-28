@@ -1,6 +1,6 @@
 import { withPath, withDefaultStyles } from './lib'
 
-export const command = withPath`~/GitHub/ticker.sh/ticker.sh $(cat ~/Dropbox/Code/ticker.conf) | aha --stylesheet --no-header`
+export const command = withPath`~/GitHub/ticker.sh/ticker.sh $(cat ~/Library/Mobile\\ Documents/com~apple~CloudDocs/Data/Code/ticker.conf) | aha --stylesheet --no-header`
 
 export const refreshFrequency = 20 * 1000
 
