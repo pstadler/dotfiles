@@ -218,9 +218,15 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
-  url:
-    launcher: open
-    modifiers: Command
+hints:
+  enabled:
+  - regex: "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+            [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+    command: open
+    post_processing: true
+    mouse:
+      enabled: true
+      mods: Command
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
