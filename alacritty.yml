@@ -30,8 +30,8 @@ window:
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
   decorations: none
-
   dynamic_title: true
+  opacity: 1.0
 
 scrolling:
   # How many lines of scrollback to keep,
@@ -185,9 +185,6 @@ colors: *flare
 bell:
   animation: EaseOutExpo
   duration: 0
-
-# Background opacity
-background_opacity: 1.0
 
 # Mouse bindings
 #

@@ -1,4 +1,4 @@
-const PATH = "/usr/local/homebrew/bin:$PATH"
+const PATH = "/opt/homebrew/bin:$PATH"
 
 export function withPath (command) {
   return `PATH=${PATH}; ${command}`

@@ -15,10 +15,13 @@ ulimit -n 1024
 export ICLOUD_DRIVE=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 
 # homebrew
-HOMEBREW_DIR=/usr/local/homebrew
-
-export PATH=$HOMEBREW_DIR/bin:$HOMEBREW_DIR/sbin:$PATH
-export MANPATH=$HOMEBREW_DIR/share/man:$MANPATH
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 #export C_INCLUDE_PATH=$HOMEBREW_DIR/include:$C_INCLUDE_PATH
 #export OBJC_INCLUDE_PATH=$HOMEBREW_DIR/include:$OBJC_INCLUDE_PATH
 #export CPLUS_INCLUDE_PATH=$HOMEBREW_DIR/include:$CPLUS_INCLUDE_PATH
@@ -34,7 +37,7 @@ export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=/usr/local/homebrew/Cellar/openjdk@11/11.0.10/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.10/libexec/openjdk.jdk/Contents/Home
 
 # ruby
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
@@ -68,4 +71,3 @@ fi
 
 # load host-specific .env-local
 [ -f ~/.env-local ] && source ~/.env-local
-
