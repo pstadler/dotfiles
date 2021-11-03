@@ -4,9 +4,8 @@ typeset -A HOSTS EMAILS
 
 # hosts config
 HOSTS=(
-  "Einstein"     "private"
-  "Apollo"       "private"
-  "Crowbar"      "work"
+  "Tank"        "private"
+# "Crowbar"     "work"
 )
 
 # emails
