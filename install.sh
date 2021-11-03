@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "Updating submodules..."
+git submodule update --init --recursive
+
 echo "Installing dotfiles..."
 for symlink in zshrc bash_profile env env_chpwd gitconfig gitignore \
                 vim vimrc ackrc nvmrc hammerspoon tmux.conf alacritty.yml
@@ -20,12 +23,12 @@ echo " mkdir   ~/.ssh/sockets/"
 
 echo "Installing zsh plugins..."
 ZSH_PLUGIN_DIR=~/.oh-my-zsh/custom/plugins
-echo " symlink $ZSH_PLUGIN_DIR/kubectl"
-[ -d $ZSH_PLUGIN_DIR/kubectl ] \
-  || ln -s $PWD/zsh/kubectl $ZSH_PLUGIN_DIR/kubectl
-echo " install $ZSH_PLUGIN_DIR/fast-syntax-highlighting"
-[ -d $ZSH_PLUGIN_DIR/fast-syntax-highlighting ] \
-  || git clone git@github.com:zdharma/fast-syntax-highlighting.git $ZSH_PLUGIN_DIR/fast-syntax-highlighting
+for symlink in $(ls zsh)
+do
+  echo " symlink $ZSH_PLUGIN_DIR/$symlink"
+  [ -d $ZSH_PLUGIN_DIR/$symlink ] \
+	  || ln -s $PWD/zsh/$symlink $ZSH_PLUGIN_DIR/$symlink
+done
 
 echo "Linking x86 binaries..."
 sudo -v # ask for password upfront

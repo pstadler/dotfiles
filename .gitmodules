@@ -1,0 +1,3 @@
+[submodule "zsh/fast-syntax-highlighting"]
+	path = zsh/fast-syntax-highlighting
+	url = git@github.com:pstadler/fast-syntax-highlighting.git
