@@ -19,6 +19,10 @@ ZSH_THEME="lukerandall"
 plugins=(fasd git brew npm docker gnu-utils colored-man-pages \
           history-substring-search fast-syntax-highlighting kubectl)
 
+if type brew &>/dev/null; then
+  FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+fi
+
 [ -f ~/.env ] && source ~/.env
 
 source $ZSH/oh-my-zsh.sh
