@@ -8,6 +8,7 @@
     ui = true
 [push]
     default = current
+    autoSetupRemote = true
 [pull]
     rebase = true
 [rebase]
