@@ -16,7 +16,7 @@ ZSH_THEME="lukerandall"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-plugins=(fasd git brew npm docker gnu-utils colored-man-pages \
+plugins=(fasd git npm docker gnu-utils colored-man-pages \
           history-substring-search fast-syntax-highlighting kubectl)
 
 if type brew &>/dev/null; then

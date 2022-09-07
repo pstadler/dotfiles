@@ -18,7 +18,6 @@ export ICLOUD_DRIVE=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
-export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew";
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
@@ -37,7 +36,7 @@ export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.15/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=/opt/homebrew/Cellar/openjdk@11/11.0.16/libexec/openjdk.jdk/Contents/Home
 
 # ruby
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
