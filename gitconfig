@@ -6,6 +6,8 @@
     excludesfile = ~/.gitignore
 [color]
     ui = true
+[init]
+    defaultBranch = main
 [push]
     default = current
     autoSetupRemote = true
