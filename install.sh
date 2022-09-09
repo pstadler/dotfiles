@@ -29,12 +29,3 @@ do
   [ -d $ZSH_PLUGIN_DIR/$symlink ] \
 	  || ln -s $PWD/zsh/$symlink $ZSH_PLUGIN_DIR/$symlink
 done
-
-echo "Linking x86 binaries..."
-sudo -v # ask for password upfront
-for symlink in $(ls x86-bin)
-do
-  echo " symlink /usr/local/bin/$symlink"
-  sudo unlink /usr/local/bin/$symlink
-  sudo ln -s $PWD/x86-bin/$symlink /usr/local/bin/$symlink
-done
