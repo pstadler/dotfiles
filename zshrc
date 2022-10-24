@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' insert-tab false # don't write tabs to prompt
 
 setopt hist_reduce_blanks # remove blanks for commands
+setopt hist_ignore_all_dups # prevent duplicate entries
 setopt interactive_comments # allow interactive comments
 setopt transient_rprompt # only show rprompt on last line
 unsetopt cdablevars # vars shouldn't expand to directory names

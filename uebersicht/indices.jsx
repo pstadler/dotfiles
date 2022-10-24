@@ -1,8 +1,8 @@
 import { withPath, withDefaultStyles } from './lib'
 
-const SYMBOLS = ['ES=F', 'YM=F', 'NQ=F', 'RTY=F', 'QQQ', '^SPX', '^DJI', 'usdchf=X']
+const SYMBOLS = ['ES=F', 'YM=F', 'NQ=F', 'RTY=F', 'QQQ', '^SPX', '^DJI', 'USDCHF=X']
 
-export const command = `curl -s "https://query1.finance.yahoo.com/v7/finance/quote?lang=en-US&region=US&corsDomain=finance.yahoo.com&fields=regularMarketChangePercent,preMarketChangePercent&symbols=${SYMBOLS.join(',')}"`
+export const command = `curl -s "https://query1.finance.yahoo.com/v7/finance/quote?lang=en-US&region=US&corsDomain=finance.yahoo.com&fields=regularMarketPrice,regularMarketChangePercent,preMarketChangePercent&symbols=${SYMBOLS.join(',')}"`
 
 export const refreshFrequency = 2 * 60 * 1000
 
@@ -28,7 +28,10 @@ export const render = ({ output }) => {
       return <div key={i} className={`row white ${className}`} style={{ opacity: isOpen ? '1' : 0.5 }}>
         {data.symbol}
         <span className='price'>
-          {data.regularMarketChangePercent.toFixed(2)}%
+          {data.symbol.endsWith('=X')
+            ? `${data.regularMarketPrice.toFixed(3)}`
+            : `${data.regularMarketChangePercent.toFixed(2)}%`
+          }
         </span>
       </div>
     })
