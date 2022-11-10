@@ -4,7 +4,6 @@
 brew 'ack'
 brew 'watch'
 brew 'wget'
-brew 'fasd'
 brew 'git'
 brew 'colordiff'
 brew 'tmux'
