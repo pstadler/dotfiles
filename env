@@ -36,7 +36,7 @@ export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 
 # java
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 # ruby
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
