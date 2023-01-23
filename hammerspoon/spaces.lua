@@ -1,10 +1,18 @@
--- Fast space switching
-local spaces = require("hs._asm.undocumented.spaces")
+-- Fast space switching using https://github.com/asmagill/hs._asm.spaces
+local spaces = require("hs.spaces")
 
 local spacesModifier = "ctrl"
 
-local spacesCount = spaces.count()
+local spacesTable = spaces.spacesForScreen()
+local spacesCount = #spacesTable
 local spacesModifiers = {"fn", spacesModifier}
+
+function getFocusedSpaceIndex()
+  local focusedSpace = spaces.focusedSpace()
+  for k, v in ipairs(spacesTable) do
+    if v == focusedSpace then return k end
+  end
+end
 
 -- infinitely cycle through spaces using ctrl+left/right to trigger ctrl+[1..n]
 local spacesEventtap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(o)
@@ -25,7 +33,7 @@ local spacesEventtap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, functi
   if not passed then return end
 
   -- switch spaces
-  local currentSpace = spaces.currentSpace()
+  local currentSpace = getFocusedSpaceIndex()
   local nextSpace
 
   -- left arrow
@@ -37,10 +45,7 @@ local spacesEventtap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, functi
   end
 
   local event = require("hs.eventtap").event
-  event.newKeyEvent({spacesModifier}, string.format("%d", nextSpace), true):post()
-  event.newKeyEvent({spacesModifier}, string.format("%d", nextSpace), false):post()
-  -- TODO: replace with this once > 0.9.50 has been released
-  --hs.eventtap.keyStroke({spacesModifier}, string.format("%d", nextSpace), 0)
+  hs.eventtap.keyStroke({spacesModifier}, string.format("%d", nextSpace), 0)
 
   -- stop propagation
   return true

@@ -43,15 +43,4 @@ function showBatteryStatus()
   hs.alert.show(message)
 end
 
-function batteryChangedCallback()
-  local powerSource = hs.battery.powerSource()
-
-  if powerSource ~= previousPowerSource then
-    showBatteryStatus()
-    previousPowerSource = powerSource;
-  end
-end
-
-hs.battery.watcher.new(batteryChangedCallback):start()
-
 hs.hotkey.bind(mash.utils, "b", showBatteryStatus)
