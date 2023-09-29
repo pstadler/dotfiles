@@ -27,6 +27,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+export HISTSIZE=100000
+export SAVEHIST=100000
+
 zstyle ':completion:*' insert-tab false # don't write tabs to prompt
 
 setopt hist_reduce_blanks # remove blanks for commands
