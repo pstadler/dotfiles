@@ -10,7 +10,9 @@ export function withDefaultStyles ({
     right,
     bottom,
     fontFamily = 'Iosevka Term SS12',
-    fontSize = '12px'
+    fontSize = '12px',
+    fontWeight = '700',
+    color = 'rgba(255, 255, 255, 0.7)'
   } = {},
   custom = ''
   ) {
@@ -25,17 +27,19 @@ export function withDefaultStyles ({
       margin: 0;
       font-size: ${fontSize};
       font-family: ${fontFamily};
+      font-weight: ${fontWeight};
+      color: ${color};
     }
 
     .white { color: #fff; }
-    .green { color: #2f731a; }
-    .red { color: #a63333; }
-    .blue { color: #4269f5; }
+    .green { color: rgb(113, 181, 156); }
+    .red { color: rgb(255, 139, 139); }
+    .blue { color: rgb(85, 172, 238); }
     .yellow { color: #f5da42 }
 
     .bg-white { background-color: #fff; }
-    .bg-green { background-color: #2f731a; }
-    .bg-red { background-color: #a63333; }
+    .bg-green { background-color: rgb(10, 111, 43); }
+    .bg-red { background-color: rgb(204, 58, 58); }
 
     ${custom}
   `

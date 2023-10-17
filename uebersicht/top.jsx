@@ -4,7 +4,7 @@ export const command = withPath`ps -arcwwwxo "command %cpu %mem" | head -11 | ta
 
 export const refreshFrequency = 10 * 1000
 
-export const className = withDefaultStyles({ left: '650px' })
+export const className = withDefaultStyles({ left: '40px', top: '40px' })
 
 export const render = ({ output }) => {
   return (
