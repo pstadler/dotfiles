@@ -1,6 +1,8 @@
 [user]
     name = Patrick Stadler
     email = patrick.stadler@gmail.com
+[includeIf "gitdir/i:~/work/"]
+    path = ~/.gitconfig-work
 [core]
     pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
     excludesfile = ~/.gitignore

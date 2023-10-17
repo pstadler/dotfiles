@@ -4,7 +4,7 @@ echo "Updating submodules..."
 git submodule update --init --recursive
 
 echo "Installing dotfiles..."
-for symlink in zshrc bash_profile env env_chpwd gitconfig gitignore \
+for symlink in zshrc bash_profile env gitconfig gitconfig-work gitignore \
                 vim vimrc ackrc nvmrc hammerspoon tmux.conf alacritty.yml
 do
   echo " symlink ~/.$symlink"

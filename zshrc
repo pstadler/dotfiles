@@ -46,6 +46,4 @@ FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path]='fg=white,bold'
 FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path-to-dir]='fg=white,bold'
 FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}global-alias]='fg=white,bold,bg=none'
 
-zstyle ":chpwd:profiles:${HOME}/GitHub(|/|/*)" profile private
-zstyle ":chpwd:profiles:${HOME}/Work(|/|/*)" profile work
 [ -f ~/.env_chpwd ] && source ~/.env_chpwd
