@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
-right_format = """$status"""
+right_format = """$cmd_duration$status$sudo"""
 
 [line_break]
 disabled = true
@@ -17,14 +17,19 @@ error_symbol = "[❯](bold black)"
 [status]
 disabled = false
 
+[sudo]
+disabled = false
+format = '[＄](red bold)'
+
 [git_branch]
 style = 'bold yellow'
 
 [git_status]
 stashed = '' # disable stashed hint
+diverged = '↯'
 
 [cmd_duration]
-disabled = true
+disabled = false
 
 [package]
 disabled = true
