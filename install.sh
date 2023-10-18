@@ -29,3 +29,12 @@ do
   [ -d $ZSH_PLUGIN_DIR/$symlink ] \
 	  || ln -s $PWD/zsh/$symlink $ZSH_PLUGIN_DIR/$symlink
 done
+
+echo "Installing .config files..."
+mkdir -p ~/.config
+for symlink in starship.toml
+do
+  echo " symlink ~/.config/$symlink"
+	rm ~/.config/$symlink
+	ln -s $PWD/$symlink ~/.config/$symlink
+done

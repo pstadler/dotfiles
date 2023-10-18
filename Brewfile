@@ -7,6 +7,7 @@ brew 'wget'
 brew 'git'
 brew 'colordiff'
 brew 'tmux'
+brew 'starship'
 brew 'jq'
 brew 'htop'
 brew 'aha' # shell escape codes to html (Uebersicht.app)

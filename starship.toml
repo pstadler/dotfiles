@@ -1,0 +1,51 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+right_format = """$status"""
+
+[line_break]
+disabled = true
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[character]
+success_symbol = "[❯](bold black)"
+error_symbol = "[❯](bold black)"
+
+[status]
+disabled = false
+
+[git_branch]
+style = 'bold yellow'
+
+[git_status]
+stashed = '' # disable stashed hint
+
+[cmd_duration]
+disabled = true
+
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[java]
+disabled = true
+
+[gradle]
+disabled = true
+
+[rust]
+disabled = true
+
+[golang]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[terraform]
+disabled = true
