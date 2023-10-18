@@ -3,6 +3,10 @@
 echo "Updating submodules..."
 git submodule update --init --recursive
 
+echo "Installing zplug..."
+[ ! -d ~/.zplug ] &&
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
 echo "Installing dotfiles..."
 for symlink in zshrc bash_profile env gitconfig gitconfig-work gitignore \
                 vim vimrc ackrc nvmrc hammerspoon tmux.conf alacritty.yml
