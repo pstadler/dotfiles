@@ -16,7 +16,7 @@ ZSH_THEME=""
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-plugins=(z colored-man-pages history-substring-search fast-syntax-highlighting kubectl)
+plugins=(z git docker npm colored-man-pages history-substring-search fast-syntax-highlighting kubectl)
 
 if type brew &>/dev/null; then
   FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
@@ -38,7 +38,7 @@ setopt transient_rprompt # only show rprompt on last line
 unsetopt cdablevars # vars shouldn't expand to directory names
 
 export LSCOLORS='ExFxCxDxbxegedabagacad'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors 'di=1;34:ln=1;35:so=1;32:pi=1;33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 # https://github.com/zdharma/fast-syntax-highlighting
 FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path]='fg=white,bold'
