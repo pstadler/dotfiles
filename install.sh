@@ -5,12 +5,22 @@ git submodule update --init --recursive
 
 echo "Installing dotfiles..."
 for symlink in zshrc bash_profile env gitconfig gitconfig-work gitignore \
-                vim vimrc ackrc nvmrc hammerspoon tmux.conf alacritty.yml
+                vim vimrc ackrc nvmrc hammerspoon tmux.conf alacritty.toml
 do
   echo " symlink ~/.$symlink"
 	rm ~/.$symlink
 	ln -s $PWD/$symlink ~/.$symlink
 done
+
+echo "Installing .config files..."
+mkdir -p ~/.config
+for symlink in starship.toml
+do
+  echo " symlink ~/.config/$symlink"
+	rm ~/.config/$symlink
+	ln -s $PWD/$symlink ~/.config/$symlink
+done
+
 
 echo "Installing ssh config..."
 echo " symlink ~/.ssh/config"
@@ -28,13 +38,4 @@ do
   echo " symlink $ZSH_PLUGIN_DIR/$symlink"
   [ -d $ZSH_PLUGIN_DIR/$symlink ] \
 	  || ln -s $PWD/zsh/$symlink $ZSH_PLUGIN_DIR/$symlink
-done
-
-echo "Installing .config files..."
-mkdir -p ~/.config
-for symlink in starship.toml
-do
-  echo " symlink ~/.config/$symlink"
-	rm ~/.config/$symlink
-	ln -s $PWD/$symlink ~/.config/$symlink
 done
