@@ -6,6 +6,7 @@ function ssidChangedCallback()
     end
 end
 
+hs.location.get() -- See: https://github.com/Hammerspoon/hammerspoon/issues/3537#issuecomment-1743870568
 hs.wifi.watcher.new(ssidChangedCallback):start()
 
 hs.hotkey.bind(mash.utils, "r", function()
