@@ -12,5 +12,6 @@ require('spaces')
 require('caffeinate')
 require('wifi')
 require('battery')
+require('cpu')
 
 hs.alert.show("Hammerspoon!")
