@@ -2,7 +2,8 @@ local updateFrequency = 3
 local imageHeight = 17
 local barWidth = 3
 local gridSpacing = 2
-local frameAlpha = .2
+local frameAlpha = 1
+local barAlpha = 0
 
 local maxBarHeight = (imageHeight - (gridSpacing * 3)) / 2
 
@@ -78,7 +79,8 @@ function update(data)
     canvas[i + canvasFrameItems] = {
       action = "fill",
       type = "rectangle",
-      fillColor = {alpha = data[i].active == 0.0 and .5 or 1.0},
+      compositeRule = barAlpha < frameAlpha and (data[i].active == 0.0 and "destinationOut" or "sourceOut") or "sourceOver",
+      fillColor = {alpha = data[i].active == 0.0 and .5 or barAlpha},
       frame = {
         x = x * (barWidth + gridSpacing) + gridSpacing,
         y = y - barHeight,
