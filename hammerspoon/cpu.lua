@@ -1,9 +1,23 @@
-local updateFrequency = 3
+local settings = {
+  theme = hs.settings.get("theme"),
+  updateFrequency = hs.settings.get("updateFrequency")
+}
+
+local themes = {
+  dark = {
+    frameAlpha = 1,
+    barAlpha = 0
+  },
+  light = {
+    frameAlpha = 0.2,
+    barAlpha = 1
+  }
+}
+local theme = themes[settings.theme] and settings.theme or "dark"
+local updateFrequency = settings.updateFrequency or 3
 local imageHeight = 17
 local barWidth = 3
 local gridSpacing = 2
-local frameAlpha = 1
-local barAlpha = 0
 
 local maxBarHeight = (imageHeight - (gridSpacing * 3)) / 2
 
@@ -31,7 +45,7 @@ function update(data)
     canvas[1] = {
       action = "fill",
       type = "rectangle",
-      fillColor = {alpha = frameAlpha},
+      fillColor = {alpha = themes[theme].frameAlpha},
       frame = {x = 0, y = 0, w = imageWidth, h = imageHeight},
       roundedRectRadii = {xRadius = 1, yRadius = 1},
       clipToPath = true
@@ -79,8 +93,9 @@ function update(data)
     canvas[i + canvasFrameItems] = {
       action = "fill",
       type = "rectangle",
-      compositeRule = barAlpha < frameAlpha and (data[i].active == 0.0 and "destinationOut" or "sourceOut") or "sourceOver",
-      fillColor = {alpha = data[i].active == 0.0 and .5 or barAlpha},
+      compositeRule = themes[theme].barAlpha < themes[theme].frameAlpha and
+        (data[i].active == 0.0 and "destinationOut" or "sourceOut") or "sourceOver",
+      fillColor = {alpha = data[i].active == 0.0 and .5 or themes[theme].barAlpha},
       frame = {
         x = x * (barWidth + gridSpacing) + gridSpacing,
         y = y - barHeight,
@@ -101,6 +116,14 @@ function changeUpdateFrequency(freq)
   updateFrequency = freq
   timer:stop()
   timer = hs.timer.doEvery(updateFrequency, query)
+  hs.settings.set("updateFrequency", freq)
+end
+
+function changeTheme(t)
+  theme = t
+  canvas = nil
+  timer:fire()
+  hs.settings.set("theme", t)
 end
 
 menubar:setMenu(
@@ -128,6 +151,25 @@ menubar:setMenu(
             checked = updateFrequency == 5,
             fn = function()
               changeUpdateFrequency(5)
+            end
+          }
+        }
+      },
+      {
+        title = "Theme",
+        menu = {
+          {
+            title = "Dark",
+            checked = theme == "dark",
+            fn = function()
+              changeTheme("dark")
+            end
+          },
+          {
+            title = "Light",
+            checked = theme == "light",
+            fn = function()
+              changeTheme("light")
             end
           }
         }
