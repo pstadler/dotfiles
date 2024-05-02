@@ -3,6 +3,7 @@ Include config.d/*
 Host *
   AddKeysToAgent yes
   UseKeychain yes
+  ForwardAgent no
   IdentityFile ~/.ssh/id_ed25519
   HostkeyAlgorithms +ssh-rsa
   PubkeyAcceptedAlgorithms +ssh-rsa
