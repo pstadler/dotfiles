@@ -10,28 +10,26 @@ brew 'tmux'
 brew 'starship'
 brew 'jq'
 brew 'htop'
-brew 'aha' # shell escape codes to html (Uebersicht.app)
+# brew 'aha' # shell escape codes to html (Uebersicht.app)
 brew 'vim'
 
 # CLIs
-brew 'terraform'
 brew 'kubectl'
 brew 'wireguard-tools'
 brew 'fnm'
+brew 'flyctl
+tap 'hashicorp/tap'
+brew 'hashicorp/tap/terraform'
 
 # Apps
 #cask 'alacritty'
 
 # Fonts
-tap 'homebrew/cask-fonts'
-cask 'font-fira-code'
-#cask 'font-m-plus'
-cask 'font-hack'
-#cask 'font-ubuntu'
-cask 'font-input'
-#cask 'font-iosevka'
-#tap robertgzr/homebrew-tap
-#cask 'font-iosevka-inziu' args: ['--with-ss05', '--with-termlig']
+#tap 'homebrew/cask-fonts'
+#tap 'homebrew/cask'
+#tap 'robertgzr/homebrew-tap'
+#brew 'iosevka', args: ['with-ss05', 'with-termlig']
+#brew 'iosevka', args: ['with-ss12', 'with-termlig']
 
 # Applications
 # tap 'caskroom/cask'

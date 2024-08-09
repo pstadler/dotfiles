@@ -26,11 +26,12 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-export HISTSIZE=100000
-export SAVEHIST=100000
+export HISTSIZE=500000
+export SAVEHIST=500000
 
 zstyle ':completion:*' insert-tab false # don't write tabs to prompt
 
+setopt inc_append_history # write immediately
 setopt hist_reduce_blanks # remove blanks for commands
 setopt hist_ignore_all_dups # prevent duplicate entries
 setopt interactive_comments # allow interactive comments
