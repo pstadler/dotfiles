@@ -8,6 +8,10 @@
     excludesfile = ~/.gitignore
 [color]
     ui = true
+#[column]
+#    ui = auto
+[branch]
+    sort = -committerdate
 [init]
     defaultBranch = main
 [push]
@@ -28,8 +32,6 @@
     contains = branch --contains
     ch = "!git reflog | awk '/: checkout:/{print $NF}' | awk '!a[$0]++' | head"
     summary = "!git log --numstat --no-merges --format=\"\" \"$@\" | awk '{files += 1}{ins += $1}{del += $2} END{print \"total: \"files\" files, \"ins\" insertions(+) \"del\" deletions(-)\"}' #"
-    pfr = "!git push origin HEAD:refs/for/$1"
-    branches = for-each-ref --sort='-authordate:iso8601' --format='%(color:green)%(authordate:iso8601)  %(color:yellow)%(authorname)%09%(color:white)%(refname:short)' refs/heads
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
