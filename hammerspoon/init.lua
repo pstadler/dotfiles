@@ -13,5 +13,6 @@ require('caffeinate')
 require('wifi')
 require('battery')
 require('cpu')
+require('vpn')
 
-hs.alert.show("Hammerspoon!")
+--hs.alert.show("Hammerspoon!")
