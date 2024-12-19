@@ -4,12 +4,13 @@
 [includeIf "gitdir/i:~/work/"]
     path = ~/.gitconfig-work
 [core]
-    pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
+    #pager = `brew --prefix`/share/git-core/contrib/diff-highlight/diff-highlight | less -IRX
+    pager = diffr | less -IRX
     excludesfile = ~/.gitignore
 [color]
     ui = true
 #[column]
-#    ui = auto
+    #ui = auto
 [branch]
     sort = -committerdate
 [init]
