@@ -26,12 +26,12 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-export HISTSIZE=500000
-export SAVEHIST=500000
+HISTSIZE=500000
+SAVEHIST=$HISTSIZE
 
 zstyle ':completion:*' insert-tab false # don't write tabs to prompt
 
-setopt inc_append_history # write immediately
+setopt share_history # share history across sessions
 setopt hist_reduce_blanks # remove blanks for commands
 setopt hist_ignore_all_dups # prevent duplicate entries
 setopt interactive_comments # allow interactive comments
@@ -48,3 +48,5 @@ FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path-to-dir]='fg=white,bold'
 FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}global-alias]='fg=white,bold,bg=none'
 
 eval "$(starship init zsh)"
+#export ATUIN_DB_PATH=~/.history.db
+eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
