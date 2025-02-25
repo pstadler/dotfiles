@@ -13,6 +13,8 @@
     #ui = auto
 [branch]
     sort = -committerdate
+[tag]
+    sort = version:refname
 [init]
     defaultBranch = main
 [push]
@@ -20,10 +22,12 @@
     autoSetupRemote = true
 [pull]
     rebase = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 [rebase]
     autoStash = true
-[diff "po"]
-    textconv=msgcat --no-location --no-wrap --sort-output
 [alias]
     st = status -sb
     co = checkout
