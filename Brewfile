@@ -10,8 +10,10 @@ brew 'tmux'
 brew 'starship'
 brew 'jq'
 brew 'htop'
-# brew 'aha' # shell escape codes to html (Uebersicht.app)
 brew 'vim'
+brew 'diffr'
+brew 'atuin'
+# brew 'aha' # shell escape codes to html (Uebersicht.app)
 
 # CLIs
 brew 'kubectl'
