@@ -29,10 +29,10 @@ symbol = ''
 style = 'bold yellow'
 
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
-stashed = '' # disable stashed hint
-# modified = '🞱'
-diverged = '↯' # ⇵
+format = '([$all_status$ahead_behind]($style)) '
+stashed = ''
+modified = '🞱'
+diverged = '‼'
 deleted = '×'
 
 [cmd_duration]
