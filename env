@@ -48,6 +48,7 @@ function serve {
 
 # tmux
 function tmx {
+  [ "$TERM_PROGRAM" = "vscode" ] && return
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new -A -s default
 }
 
