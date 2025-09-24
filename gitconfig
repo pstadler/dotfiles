@@ -37,8 +37,3 @@
     contains = branch --contains
     ch = "!git reflog | awk '/: checkout:/{print $NF}' | awk '!a[$0]++' | head"
     summary = "!git log --numstat --no-merges --format=\"\" \"$@\" | awk '{files += 1}{ins += $1}{del += $2} END{print \"total: \"files\" files, \"ins\" insertions(+) \"del\" deletions(-)\"}' #"
-[filter "lfs"]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
