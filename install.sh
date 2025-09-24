@@ -14,7 +14,7 @@ done
 
 echo "Installing .config files..."
 mkdir -p ~/.config
-for symlink in starship.toml
+for symlink in starship.toml ghostty
 do
   echo " symlink ~/.config/$symlink"
 	rm ~/.config/$symlink

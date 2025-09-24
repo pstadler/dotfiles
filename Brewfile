@@ -24,7 +24,7 @@ tap 'hashicorp/tap'
 brew 'hashicorp/tap/terraform'
 
 # Apps
-#cask 'alacritty'
+#cask 'ghostty'
 
 # Fonts
 #tap 'homebrew/cask-fonts'

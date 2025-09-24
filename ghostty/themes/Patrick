@@ -1,0 +1,21 @@
+palette = 0=#72777b
+palette = 1=#ff8b92
+palette = 2=#64d38a
+palette = 3=#eed49f
+palette = 4=#9992f0
+palette = 5=#bf74d2
+palette = 6=#6caeff
+palette = 7=#f2f2f2
+palette = 8=#72777b
+palette = 9=#ff8b92
+palette = 10=#64d38a
+palette = 11=#eed49f
+palette = 12=#9992f0
+palette = 13=#bf74d2
+palette = 14=#6caeff
+palette = 15=#f2f2f2
+
+background = #1d1f20
+foreground = #72777b
+cursor-color = #ffcc00
+cursor-text = #000000
