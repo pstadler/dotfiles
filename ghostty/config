@@ -2,23 +2,29 @@ theme = Patrick
 
 font-family = "Iosevka Term SS12"
 font-size = 13
-font-thicken = true
-font-thicken-strength = 25
 font-style = Medium
 font-style-bold = Medium
 font-style-italic = Medium
 font-style-bold-italic = Medium
+font-thicken = true
+font-thicken-strength = 25
 bold-color = bright
 
-# window-decoration = none
-# window-padding-x = 0
-# window-padding-y = 0
+#window-decoration = none
+#window-padding-x = 0
+#window-padding-y = 0
+#background-opacity = 0.9
+#background-blur = 20
+title = " "
+macos-titlebar-proxy-icon = hidden
 window-save-state = always
 bell-features = no-attention
 confirm-close-surface = false
+macos-shortcuts = deny
 
 cursor-style = block
 cursor-style-blink = false
+shell-integration-features = no-cursor
 
 # manipulate tmux panes
 keybind = cmd+d=text:u{0004}
