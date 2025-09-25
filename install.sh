@@ -5,7 +5,7 @@ git submodule update --init --recursive
 
 echo "Installing dotfiles..."
 for symlink in zshrc bash_profile env gitconfig gitconfig-work gitignore \
-                vim vimrc ackrc nvmrc hammerspoon tmux.conf alacritty.toml
+                vim vimrc ackrc nvmrc hammerspoon tmux.conf
 do
   echo " symlink ~/.$symlink"
 	rm ~/.$symlink
