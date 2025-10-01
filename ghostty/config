@@ -35,3 +35,4 @@ keybind = opt+left=unbind
 keybind = opt+right=unbind
 # ctrl+l to clear screen - "clear_screen" doesn't work
 keybind = ctrl+l=text:\x0c
+keybind = cmd+w=close_window
