@@ -37,6 +37,7 @@ setopt hist_ignore_all_dups # prevent duplicate entries
 setopt interactive_comments # allow interactive comments
 setopt transient_rprompt # only show rprompt on last line
 unsetopt cdablevars # vars shouldn't expand to directory names
+setopt ignoreeof # unbind ctrl+d
 
 # https://geoff.greer.fm/lscolors/
 export LSCOLORS='ExFxCxDxbxegedabagacad'
