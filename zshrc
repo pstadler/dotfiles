@@ -49,5 +49,3 @@ FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}path-to-dir]='fg=white,bold'
 FAST_HIGHLIGHT_STYLES[${FAST_THEME_NAME}global-alias]='fg=white,bold,bg=none'
 
 eval "$(starship init zsh)"
-#export ATUIN_DB_PATH=~/.history.db
-eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"

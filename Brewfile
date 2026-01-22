@@ -12,7 +12,6 @@ brew 'jq'
 brew 'htop'
 brew 'vim'
 brew 'diffr'
-brew 'atuin'
 # brew 'aha' # shell escape codes to html (Uebersicht.app)
 
 # CLIs
