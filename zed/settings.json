@@ -28,9 +28,17 @@
     "light": "Ayu Light",
     "dark": "Ayu Mirage",
   },
-  "icon_theme": "Soft Charmed Icons",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Soft Charmed Icons",
+    "dark": "Soft Charmed Icons",
+  },
+  "tab_size": 2,
   "ensure_final_newline_on_save": false,
   "preview_tabs": {
+    "enabled": false,
+    "enable_preview_from_multibuffer": false,
+    "enable_preview_from_project_panel": false,
     "enable_preview_file_from_code_navigation": false,
   },
   "inline_code_actions": false,
@@ -44,9 +52,10 @@
   "colorize_brackets": true,
   "close_on_file_delete": true,
   "title_bar": {
+    "show_user_picture": false,
     "show_menus": false,
-    "show_user_menu": true,
-    "show_sign_in": true,
+    "show_user_menu": false,
+    "show_sign_in": false,
     "show_onboarding_banner": true,
     "show_branch_status_icon": false,
     "show_project_items": true,
@@ -83,7 +92,7 @@
   },
   "tabs": {
     "file_icons": true,
-    "git_status": false,
+    "git_status": true,
   },
   "languages": {
     "JavaScript": {
