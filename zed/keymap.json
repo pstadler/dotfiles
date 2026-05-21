@@ -20,14 +20,34 @@
   },
   {
     "context": "Editor",
-      "bindings": {
-      "ctrl-cmd-down": "editor::MoveLineDown"
-    }
+    "bindings": {
+      "ctrl-cmd-down": "editor::MoveLineDown",
+    },
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-cmd-up": "editor::MoveLineUp"
-    }
-  }
+      "ctrl-cmd-up": "editor::MoveLineUp",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-/": [
+        "editor::ToggleComments",
+        {
+          "advance_downwards": false,
+        },
+      ],
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "cmd-w": [
+        "action::Sequence",
+        ["pane::ActivateLastItem", "pane::CloseActiveItem"],
+      ],
+    },
+  },
 ]
