@@ -14,7 +14,7 @@ done
 
 echo "Installing .config files..."
 mkdir -p ~/.config
-for symlink in starship.toml ghostty
+for symlink in starship.toml ghostty zed/settings.json zed/keymap.json
 do
   echo " symlink ~/.config/$symlink"
 	rm ~/.config/$symlink

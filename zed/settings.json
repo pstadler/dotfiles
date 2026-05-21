@@ -1,0 +1,131 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+// {
+{
+  "auto_install_extensions": {
+    "html": true,
+    "toml": true,
+    "dockerfile": true,
+    "scss": true,
+    "docker-compose": true,
+    "charmed-icons": true,
+    "editorconfig": true,
+  },
+  "buffer_font_family": "Iosevka Term SS05",
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "buffer_line_height": {
+    "custom": 1.4,
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Mirage",
+  },
+  "icon_theme": "Soft Charmed Icons",
+  "ensure_final_newline_on_save": false,
+  "preview_tabs": {
+    "enable_preview_file_from_code_navigation": false,
+  },
+  "inline_code_actions": false,
+  "debugger": {
+    "button": false,
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "colorize_brackets": true,
+  "close_on_file_delete": true,
+  "title_bar": {
+    "show_menus": false,
+    "show_user_menu": true,
+    "show_sign_in": true,
+    "show_onboarding_banner": true,
+    "show_branch_status_icon": false,
+    "show_project_items": true,
+  },
+  "use_system_window_tabs": false,
+  "centered_layout": {
+    "left_padding": null,
+  },
+  "bottom_dock_layout": "contained",
+  "search": {
+    "button": false,
+  },
+  "toolbar": {
+    "agent_review": true,
+    "quick_actions": false,
+    "selections_menu": true,
+    "code_actions": true,
+    "breadcrumbs": false,
+  },
+  "gutter": {
+    "bookmarks": false,
+    "breakpoints": false,
+    "runnables": false,
+    "folds": false,
+  },
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "minimap": {
+    "show": "always",
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": false,
+  },
+  "languages": {
+    "JavaScript": {
+      "tab_size": 2,
+      "language_servers": ["!vtsls", "!typescript-language-server", "..."],
+    },
+    "TypeScript": {
+      "tab_size": 2,
+    },
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+  "hide_mouse": "never",
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "project_panel": {
+    "bold_folder_labels": false,
+    "folder_icons": true,
+    "entry_spacing": "standard",
+    "hide_hidden": false,
+    "dock": "left",
+  },
+  "outline_panel": {
+    "button": false,
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "button": false,
+    "dock": "left",
+  },
+  "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "git_panel": {
+    "button": false,
+    "dock": "left",
+  },
+}
