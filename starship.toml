@@ -178,3 +178,7 @@ disabled = true
 disabled = true
 [shell]
 disabled = true
+[bun]
+disabled = true
+[maven]
+disabled = true
