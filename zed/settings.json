@@ -8,6 +8,46 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 // {
 {
+  "ui_font_family": "Iosevka Term SS12",
+  "terminal": {
+    "font_family": "Iosevka Term SS05",
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+  "prettier": {
+    "allowed": true,
+    "semi": false,
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "jsxSingleQuote": true,
+    "singleQuote": true,
+    "printWidth": 100,
+  },
+  "cli_default_open_behavior": "existing_window",
+  "soft_wrap": "editor_width",
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "effort": "medium",
+      },
+      "type": "registry",
+    },
+  },
   "auto_install_extensions": {
     "html": true,
     "toml": true,
@@ -16,9 +56,12 @@
     "docker-compose": true,
     "charmed-icons": true,
     "editorconfig": true,
+    "sql": true,
+    "lua": true,
+    "terraform": true,
   },
   "buffer_font_family": "Iosevka Term SS05",
-  "ui_font_size": 16,
+  "ui_font_size": 16.0,
   "buffer_font_size": 14.0,
   "buffer_line_height": {
     "custom": 1.4,
@@ -42,15 +85,18 @@
     "enable_preview_from_project_panel": false,
     "enable_preview_file_from_code_navigation": false,
   },
+  "status_bar": {
+    "show_active_file": true,
+  },
   "inline_code_actions": false,
   "debugger": {
     "button": false,
   },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false,
-  },
   "colorize_brackets": true,
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+  },
   "close_on_file_delete": true,
   "title_bar": {
     "show_branch_name": true,
@@ -77,6 +123,9 @@
     "code_actions": true,
     "breadcrumbs": false,
   },
+  "file_finder": {
+    "modal_max_width": "large",
+  },
   "gutter": {
     "bookmarks": false,
     "breakpoints": false,
@@ -85,13 +134,12 @@
   },
   "scroll_beyond_last_line": "vertical_scroll_margin",
   "minimap": {
-    "current_line_highlight": "all",
     "thumb_border": "none",
     "thumb": "always",
     "show": "always",
   },
   "tab_bar": {
-    "show": true,
+    "show": false,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
@@ -107,6 +155,9 @@
     },
     "TypeScript": {
       "tab_size": 2,
+    },
+    "Java": {
+      "format_on_save": "off",
     },
   },
   "edit_predictions": {
@@ -135,6 +186,7 @@
     "dock": "left",
   },
   "agent": {
+    "show_turn_stats": true,
     "enable_feedback": false,
     "sidebar_side": "right",
     "dock": "right",
@@ -144,5 +196,9 @@
   "git_panel": {
     "button": false,
     "dock": "left",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
   },
 }

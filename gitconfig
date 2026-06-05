@@ -28,6 +28,8 @@
     all = true
 [rebase]
     autoStash = true
+[merge]
+    conflictStyle = zdiff3
 [alias]
     st = status -sb
     co = checkout
@@ -35,5 +37,6 @@
     br = branch
     l = log --graph --full-history --pretty=format:'%C(red)%h%Creset - %C(yellow)%s %C(green)(%an, %cr)%C(white)%d%C(reset)' --abbrev-commit --date=relative
     contains = branch --contains
+    d = "!git diff | delta --features=side-by-side"
     ch = "!git reflog | awk '/: checkout:/{print $NF}' | awk '!a[$0]++' | head"
     summary = "!git log --numstat --no-merges --format=\"\" \"$@\" | awk '{files += 1}{ins += $1}{del += $2} END{print \"total: \"files\" files, \"ins\" insertions(+) \"del\" deletions(-)\"}' #"
