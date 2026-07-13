@@ -44,10 +44,19 @@
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
-      "cmd-w": [
-        "action::Sequence",
-        ["pane::ActivateLastItem", "pane::CloseActiveItem"],
-      ],
+      "cmd-w": ["action::Sequence", ["pane::ActivateLastItem", "pane::CloseActiveItem"]],
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-s": "workspace::SaveWithoutFormat",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k s": "workspace::SaveWithoutFormat",
     },
   },
 ]

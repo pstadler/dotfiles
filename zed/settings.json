@@ -40,14 +40,6 @@
   },
   "cli_default_open_behavior": "existing_window",
   "soft_wrap": "editor_width",
-  "agent_servers": {
-    "opencode": {
-      "default_config_options": {
-        "effort": "medium",
-      },
-      "type": "registry",
-    },
-  },
   "auto_install_extensions": {
     "html": true,
     "toml": true,
@@ -79,6 +71,7 @@
   "tab_size": 2,
   "ensure_final_newline_on_save": false,
   "wrap_guides": [80, 100],
+  "when_closing_with_no_tabs": "keep_window_open",
   "preview_tabs": {
     "enabled": false,
     "enable_preview_from_multibuffer": false,
@@ -108,7 +101,6 @@
     "show_branch_status_icon": true,
     "show_project_items": true,
   },
-  "use_system_window_tabs": false,
   "centered_layout": {
     "left_padding": null,
   },
@@ -139,7 +131,7 @@
     "show": "always",
   },
   "tab_bar": {
-    "show": false,
+    "show": true,
     "show_nav_history_buttons": false,
     "show_tab_bar_buttons": false,
   },
@@ -148,6 +140,7 @@
     "file_icons": true,
     "git_status": true,
   },
+  "format_on_save": "on",
   "languages": {
     "JavaScript": {
       "tab_size": 2,
@@ -155,9 +148,6 @@
     },
     "TypeScript": {
       "tab_size": 2,
-    },
-    "Java": {
-      "format_on_save": "off",
     },
   },
   "edit_predictions": {
