@@ -101,7 +101,10 @@ sub tmux_get_buffer {
 }
 
 sub tmux_open_inner_window {
-    system "tmux", "new-window", "-dn", "", "-t", TMUX_WINDOW_ID, "$0 inner";
+    if (system "tmux", "new-window", "-d", "-t", TMUX_WINDOW_ID, "$0 inner") {
+        tmux_display_message("Failed to open URL selector");
+        return;
+    }
     system "tmux", "setw", "-qt", TMUX_WINDOW_ID, "window-status-format", "";
     system "tmux", "setw", "-qt", TMUX_WINDOW_ID, "window-status-current-format", "";
 }
