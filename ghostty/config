@@ -3,9 +3,9 @@ theme = Patrick
 font-family = "Iosevka Term SS12"
 font-size = 13
 font-style = Medium
-font-style-bold = Medium
+font-style-bold = Bold
 font-style-italic = Medium
-font-style-bold-italic = Medium
+font-style-bold-italic = Bold
 font-thicken = true
 font-thicken-strength = 25
 bold-color = bright
@@ -27,14 +27,25 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
-# manipulate tmux panes (send prefix Ctrl+Y, then command)
+# manipulate herdr panes (send prefix Ctrl+Y, then command)
 keybind = cmd+d=text:\x19s
 keybind = cmd+t=text:\x19n
-keybind = cmd+w=text:\x19x
-# navigate tmux tabs
+keybind = cmd+w=text:\x19w
+# navigate herdr tabs
 keybind = opt+left=unbind
 keybind = opt+right=unbind
+# navigate herdr agents
+keybind = opt+shift+left=unbind
+keybind = opt+shift+right=unbind
+# navigate herdr workspaces
+keybind = opt+shift+up=unbind
+keybind = opt+shift+down=unbind
+# manipulate herdr workspaces (send prefix Ctrl+Y, then command)
+keybind = opt+shift+n=text:\x19N
+keybind = opt+shift+w=text:\x19D
 # ctrl+l to clear screen - "clear_screen" doesn't work
 keybind = ctrl+l=text:\x0c
 # unbind new window
 keybind = cmd+n=unbind
+# unbind split down
+keybind = shift+cmd+d=unbind

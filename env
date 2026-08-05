@@ -27,6 +27,8 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 #export OBJCPLUS_INCLUDE_PATH=$HOMEBREW_DIR/include:$OBJCPLUS_INCLUDE_PATH
 export HOMEBREW_NO_ANALYTICS=1
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # node.js
 export PATH=./node_modules/.bin:$HOME/.fnm:$PATH
 eval "`fnm env`"
@@ -46,14 +48,10 @@ function serve {
   python3 -m http.server $port
 }
 
-# tmux
-function tmx {
+# herdr
+if command -v herdr > /dev/null; then
   [ "$TERM_PROGRAM" = "zed" ] && return
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new -A -s default
-}
-
-if command -v tmux > /dev/null; then
-  tmx
+  [ -z "$HERDR_ENV" ] && herdr
 fi
 
 # load host-specific .env-local

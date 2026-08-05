@@ -1,0 +1,72 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+
+auto_switch = false
+
+[theme.custom]
+surface_dim = "#313244"
+
+[terminal]
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+y"
+
+reload_config = "prefix+comma"
+rename_tab = "prefix+r"
+cycle_pane_next = "prefix+y"
+new_tab = ["prefix+c", "prefix+n"]
+previous_tab = ["prefix+p", "alt+left"]
+next_tab = "alt+right"
+switch_tab = "prefix+1..9"
+focus_pane_up = "alt+up"
+focus_pane_down = "alt+down"
+previous_workspace = "alt+shift+up"
+next_workspace = "alt+shift+down"
+new_workspace = "prefix+shift+n"
+close_workspace = "prefix+shift+d"
+previous_agent = "alt+shift+left"
+next_agent = "alt+shift+right"
+split_horizontal = "prefix+s"
+close_pane = "prefix+w"
+
+# Keep the Herd actions whose defaults collide with the tmux bindings above.
+settings = "prefix+shift+s"
+resize_mode = "prefix+shift+r"
+
+[[keys.command]]
+key = "ctrl+o"
+type = "popup"
+command = "$HOME/GitHub/dotfiles/herdr/herdr-url-opener.zsh"
+description = "select URL"
+width = "100%"
+height = "100%"
+
+[ui]
+agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = true
+sidebar_collapsed_mode = "hidden"
+prompt_new_tab_name = false
+confirm_close = true
+
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "workspace", "tab"],
+  ["state_text", "agent"]
+]
+
+[ui.sidebar.agents.rows_by_agent]
+claude = [
+  ["state_icon", "workspace", "tab"],
+  ["state_text", { token = "agent", fg = "#d77757" }]
+]
+codex = [
+  ["state_icon", "workspace", "tab"],
+  ["state_text", { token = "agent", fg = "#0080f7" }]
+]
+opencode = [
+  ["state_icon", "workspace", "tab"],
+  ["state_text", { token = "agent", fg = "#cfcecd" }]
+]

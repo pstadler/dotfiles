@@ -5,7 +5,7 @@ git submodule update --init --recursive
 
 echo "Installing dotfiles..."
 for symlink in zshrc bash_profile env gitconfig gitconfig-work gitignore \
-                vim vimrc ackrc nvmrc hammerspoon tmux.conf
+                vim vimrc ackrc nvmrc hammerspoon
 do
   echo " symlink ~/.$symlink"
 	rm ~/.$symlink
@@ -14,7 +14,8 @@ done
 
 echo "Installing .config files..."
 mkdir -p ~/.config
-for symlink in starship.toml ghostty zed/settings.json zed/keymap.json
+mkdir -p ~/.config/herdr
+for symlink in starship.toml ghostty zed/settings.json zed/keymap.json herdr/config.toml
 do
   echo " symlink ~/.config/$symlink"
 	rm ~/.config/$symlink

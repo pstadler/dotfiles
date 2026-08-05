@@ -8,6 +8,22 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 // {
 {
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "inlay_hints": {
+    "enabled": false,
+  },
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "model": "openai/gpt-5.6-luna",
+      },
+      "type": "registry",
+    },
+  },
   "ui_font_family": "Iosevka Term SS12",
   "terminal": {
     "font_family": "Iosevka Term SS05",
@@ -59,12 +75,12 @@
     "custom": 1.4,
   },
   "theme": {
-    "mode": "dark",
-    "light": "Ayu Light",
+    "mode": "light",
+    "light": "Catppuccin Latte",
     "dark": "Ayu Mirage",
   },
   "icon_theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "Soft Charmed Icons",
     "dark": "Soft Charmed Icons",
   },
@@ -191,4 +207,5 @@
     "diagnostics": false,
     "metrics": false,
   },
+  "lsp_document_colors": "background",
 }
