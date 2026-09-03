@@ -1,0 +1,21 @@
+id = "local.url-opener"
+name = "URL Opener"
+version = "0.1.2"
+min_herdr_version = "0.8.0"
+description = "Select and open URLs from the active Herdr pane"
+platforms = ["macos"]
+
+[[actions]]
+id = "open"
+title = "Select URL"
+description = "Select and open a URL from the active pane"
+contexts = ["pane"]
+command = ["zsh", "./open-picker.zsh"]
+
+[[panes]]
+id = "picker"
+title = "URL select"
+placement = "popup"
+width = "100%"
+height = "100%"
+command = ["zsh", "./url-opener.zsh"]

@@ -1,0 +1,22 @@
+id = "local.even-panes"
+name = "Even Panes"
+version = "0.1.7"
+min_herdr_version = "0.8.0"
+description = "Keep pane layouts evenly balanced"
+platforms = ["macos"]
+
+[[events]]
+on = "pane.created"
+command = ["python3", "./even-panes.py"]
+
+[[events]]
+on = "pane.closed"
+command = ["python3", "./even-panes.py"]
+
+[[events]]
+on = "pane.exited"
+command = ["python3", "./even-panes.py"]
+
+[[events]]
+on = "pane.moved"
+command = ["python3", "./even-panes.py"]

@@ -8,10 +8,13 @@ normal_link_highlight=$'\e[94;1;4m'
 reset=$'\e[0m'
 
 # Adapted from urxvt's url-select regex.
-url_pattern="(https?://|ftp://|news://|git://|mailto:|file://|www\\.)[[:alnum:]_@;/?:&=%\$.,+!*'()~#-]*[[:alnum:]_@;/?&=%\$+!*'(~#-]"
+url_pattern="(https?://|ftp://|news://|git://|mailto:|file://|www\\.)[[:alnum:]_@;/?:&=%\\$.,+!*'()~#-]*[[:alnum:]_@;/?&=%\\$+!*'(~#-]"
 
 herdr=${HERDR_BIN_PATH:-herdr}
-pane_id=$HERDR_ACTIVE_PANE_ID
+pane_id=${HERDR_URL_SOURCE_PANE:-${HERDR_ACTIVE_PANE_ID:-$HERDR_PANE_ID}}
+if [[ -z $pane_id && -n $HERDR_PLUGIN_CONTEXT_JSON ]]; then
+  pane_id=$(printf '%s' "$HERDR_PLUGIN_CONTEXT_JSON" | jq -r '.focused_pane_id // empty' 2>/dev/null)
+fi
 
 fail() {
   print -ru2 -- "$1"

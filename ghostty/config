@@ -22,9 +22,10 @@ window-save-state = always
 bell-features = no-attention,no-title
 confirm-close-surface = false
 macos-shortcuts = deny
+clipboard-trim-trailing-spaces = true
 
 cursor-style = block
-cursor-style-blink = false
+cursor-style-blink = true
 shell-integration-features = no-cursor
 
 # manipulate herdr panes (send prefix Ctrl+Y, then command)

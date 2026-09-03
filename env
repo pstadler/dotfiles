@@ -40,6 +40,9 @@ export PATH=$PATH:$GOPATH/bin
 # java
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
+# LM Studio CLI (lms)
+# export PATH="$PATH:/Users/pstadler/.lmstudio/bin"
+
 # serve the current directory
 function serve {
   port=${1:-8080}
@@ -50,7 +53,7 @@ function serve {
 
 # herdr
 if command -v herdr > /dev/null; then
-  [ "$TERM_PROGRAM" = "zed" ] && return
+  [ "$TERM_PROGRAM" != "ghostty" ] && return
   [ -z "$HERDR_ENV" ] && herdr
 fi
 

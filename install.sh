@@ -22,6 +22,15 @@ do
 	ln -s $PWD/$symlink ~/.config/$symlink
 done
 
+if command -v herdr > /dev/null; then
+  echo "Installing herdr plugins..."
+  for plugin in herdr/plugins/*
+  do
+    [ -f "$plugin/herdr-plugin.toml" ] || continue
+    echo " plugin link $plugin"
+    herdr plugin link "$plugin" > /dev/null
+  done
+fi
 
 echo "Installing ssh config..."
 echo " symlink ~/.ssh/config"
