@@ -9,7 +9,7 @@ end
 function setCaffeineMenuItem(isIdle)
   if isIdle then
     caffeine = hs.menubar.new()
-    caffeine:setIcon(hs.image.imageFromPath(os.getenv("HOME") .. "/.hammerspoon/caffeine-on.pdf"))
+    caffeine:setIcon(hs.image.imageFromPath(hs.configdir .. "/caffeinate/caffeine-on.pdf"))
     caffeine:setClickCallback(toggleCaffeine)
 
     hs.alert.show("Caffeinated!")
