@@ -7,6 +7,7 @@ function M.resetText(resetsAt)
   local days = math.floor(seconds / 86400)
   local hours = math.floor(seconds / 3600) % 24
   local minutes = math.floor(seconds / 60) % 60
+  if days > 0 and hours == 0 then return string.format("resets in %dd", days) end
   if days > 0 then return string.format("resets in %dd %dh", days, hours) end
   if hours > 0 then return string.format("resets in %dh %dm", hours, minutes) end
   if seconds >= 60 then return string.format("resets in %dm", minutes) end

@@ -48,10 +48,10 @@ local function display(result)
     local window = limits[key]
     if type(window) == "table" and type(window.usedPercent) == "number" then
       local percent = math.max(0, math.min(100, 100 - window.usedPercent))
+      local minutes = window.windowDurationMins
       if not remaining or percent < remaining then
         remaining, remainingReset = percent, window.resetsAt
       end
-      local minutes = window.windowDurationMins
       local label = key == "primary" and "Primary window" or "Secondary window"
       if type(minutes) == "number" then
         if minutes == 10080 then
