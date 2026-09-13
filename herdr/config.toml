@@ -7,6 +7,7 @@ auto_switch = false
 [theme.custom]
 surface_dim = "#313244"
 active_row_bg = "#313244"
+panel_bg = "none"
 
 [terminal]
 new_cwd = "follow"
