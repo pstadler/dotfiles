@@ -14,5 +14,6 @@ require('wifi')
 require('cpu')
 require('subscriptions.openai')
 require('subscriptions.copilot')
+require('subscriptions.claude')
 
 --hs.alert.show("Hammerspoon!")
