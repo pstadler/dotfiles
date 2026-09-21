@@ -6,26 +6,22 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
-// {
 {
+  "on_new_window": "empty_tab",
+  "disable_ai": false,
+  "ui_font_family": ".ZedSans",
+  "ui_font_weight": 300.0,
   "diagnostics": {
     "inline": {
-      "enabled": true,
+      "enabled": false,
     },
   },
   "inlay_hints": {
     "enabled": false,
   },
-  "agent_servers": {
-    "opencode": {
-      "default_config_options": {
-        "model": "openai/gpt-5.6-luna",
-      },
-      "type": "registry",
-    },
-  },
-  "ui_font_family": "Iosevka Term SS12",
+  "agent_servers": {},
   "terminal": {
+    "shell": "system",
     "font_family": "Iosevka Term SS05",
   },
   "lsp": {
@@ -75,9 +71,9 @@
     "custom": 1.4,
   },
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Catppuccin Latte",
-    "dark": "Ayu Mirage",
+    "dark": "Catppuccin Macchiato",
   },
   "icon_theme": {
     "mode": "light",
@@ -178,7 +174,6 @@
   },
   "project_panel": {
     "bold_folder_labels": false,
-    "folder_icons": true,
     "entry_spacing": "standard",
     "hide_hidden": false,
     "dock": "left",
